@@ -1,0 +1,21 @@
+
+/build
+build.sh
+.cache-loader
+# Dependencies
+deploy.sh
+develop.sh
+.docusaurus
+.DS_Store
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
+# Generated files
+# Misc
+/node_modules
+npm-debug.log*
+# Production
+serve.sh
+yarn-debug.log*
+yarn-error.log*

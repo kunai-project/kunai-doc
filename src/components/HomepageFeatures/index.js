@@ -1,0 +1,62 @@
+import React from 'react';
+import clsx from 'clsx';
+import styles from './styles.module.css';
+
+const FeatureList = [
+  {
+    title: 'It Simply Works',
+    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    description: (
+      <>
+        No fancy dependencies, just a single binary you can run everywhere
+      </>
+    ),
+  },
+  {
+    title: 'Powered by Rust and eBPF',
+    Svg: require('@site/static/img/aya.svg').default,
+    description: (
+      <>
+        Kunai uses the great&nbsp;<a href="https://github.com/aya-rs">Aya library</a> so that it ends up being a consistent Rust project easy to maintain and extend.
+      </>
+    ),
+  },
+  {
+    title: 'Container Support',
+    Svg : require('@site/static/img/docker.svg').default,
+    description: (
+      <>
+        Kunai gives you the ability to monitor what is happening inside your containers and apply all your
+        threat-hunting rules seamlessly.
+      </>
+    ),
+  },
+];
+
+function Feature({ Svg, title, description }) {
+  return (
+    <div className={clsx('col col--4')}>
+      <div className="text--center">
+        <Svg className={styles.featureSvg} role="img" />
+      </div>
+      <div className="text--center padding-horiz--md">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+    </div>
+  );
+}
+
+export default function HomepageFeatures() {
+  return (
+    <section className={styles.features}>
+      <div className="container">
+        <div className="row">
+          {FeatureList.map((props, idx) => (
+            <Feature key={idx} {...props} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
