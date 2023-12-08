@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkunai_doc=self.webpackChunkkunai_doc||[]).push([[1713],{3457:e=>{e.exports=JSON.parse('[{"label":"malware","permalink":"/blog/tags/malware","count":1},{"label":"detection-engineering","permalink":"/blog/tags/detection-engineering","count":1},{"label":"announcement","permalink":"/blog/tags/announcement","count":1}]')}}]);

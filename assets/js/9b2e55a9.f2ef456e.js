@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkunai_doc=self.webpackChunkkunai_doc||[]).push([[1295],{3197:e=>{e.exports=JSON.parse('{"label":"detection-engineering","permalink":"/blog/tags/detection-engineering","allTagsPath":"/blog/tags","count":1}')}}]);
