@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkkunai_doc=self.webpackChunkkunai_doc||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"A cheap SIEM for Linux","permalink":"/blog/cheap-siem-for-linux"},{"title":"BPFDoor case study","permalink":"/blog/bpf-door-case-study"},{"title":"Announcing Kunai","permalink":"/blog/announcing-kunai"}]}')}}]);
