@@ -28,6 +28,9 @@ output = "/dev/stdout"
 // NB: increasing this limit also increase the memory used by kunai
 max_buffered_events = 1024
 
+// paths to files containing detection/filtering rules
+rules = []
+
 [[events]]
 name = "execve"
 enable = true
@@ -103,10 +106,14 @@ enable = true
 [[events]]
 name = "file_rename"
 enable = true
+
+[[events]]
+name = "file_unlink"
+enable = true
 ```
 
 :::info 
-Configuration is very basic for the moment, any sort of advanced filtering will be implemented later in the project.
+Enabling/disabling logs will impact the performance of the tool. If you are looking for advanced log filtering please look at [log filtering documentation](advanced/log_filtering.md)
 :::
 
 ## Advanced CLI usage
@@ -123,14 +130,20 @@ Options:
           Specify a configuration file to use. Command line options superseed the ones specified in the configuration file.
       --dump-config
           Prints a default configuration to stdout
+      --show-events
+          Show details about configurable events on stdout
       --exclude <EXCLUDE>
           Exclude events by name (comma separated)
       --include <INCLUDE>
           Include events by name (comma separated). Superseeds any exclude filter.
       --max-buffered-events <MAX_BUFFERED_EVENTS>
           Increase the size of the buffer shared between eBPF probes and userland
+  -r, --rule-file <FILE>
+          Detection/filtering rule file. Superseeds configuration file
   -v, --verbose...
           Set verbosity level, repeat option for more verbosity.
+  -s, --silent
+          
   -h, --help
           Print help
   -V, --version
