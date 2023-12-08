@@ -1,0 +1,1831 @@
+{
+  "data": {
+    "ancestors": "/usr/lib/systemd/systemd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/bin/bash|/usr/bin/sudo|/usr/bin/su|/usr/bin/bash",
+    "parent_exe": "/usr/bin/bash",
+    "command_line": "./bpfdoor.mwr",
+    "exe": {
+      "file": "/tmp/bpfdoor.mwr",
+      "md5": "0017f7b913ce66e4d80f7e78cf830a2b",
+      "sha1": "f1bf775746a5c882b9ec003617b2a70cf5a5b029",
+      "sha256": "fa0defdabd9fd43fe2ef1ec33574ea1af1290bd3d763fdb2bed443f2bd996d73",
+      "sha512": "ff5dd28ba3f5ce1f85f85fa9b65f9f30fbd300f2ca238cb2713da7077b7a0a8ff094cff4d7de9381726925abdd9ea065fa75ccd02fa5a816b71a6f91479363c1",
+      "size": 28832
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 1,
+      "name": "execve",
+      "uuid": "86d87300-3ddc-5301-962e-a7d4ca29f682",
+      "batch": 23
+    },
+    "task": {
+      "name": "bpfdoor.mwr",
+      "pid": 1741,
+      "tgid": 1741,
+      "guuid": "c9689755-4500-0000-82bb-77d6cd060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "bash",
+      "pid": 1567,
+      "tgid": 1567,
+      "guuid": "bed285f7-2a00-0000-82bb-77d61f060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400100"
+    },
+    "utc_time": "2023-09-05T09:33:07.519141032Z"
+  }
+}
+{
+  "data": {
+    "command_line": "./bpfdoor.mwr",
+    "exe": "/tmp/bpfdoor.mwr",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libc-2.31.so",
+      "md5": "5898fac5d2680d0d8fefdadd632b7188",
+      "sha1": "1430c57bf7ca6bd7f84a11c2cb7580fc39da07f5",
+      "sha256": "80378c2017456829f32645e6a8f33b4c40c8efa87db7e8c931a229afa7bf6712",
+      "sha512": "da6d718c0eabbd5996b8988c8659f5dd458e49675991a261d03ec1184e1588227f0ed5f08fa81c66b3e14edcd912357a4a1ef3de1bc638d35069c7399b690e29",
+      "size": 2029592
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "4e49a4c1-c63b-1d4b-551a-3e37fd4e98ef",
+      "batch": 25
+    },
+    "task": {
+      "name": "bpfdoor.mwr",
+      "pid": 1741,
+      "tgid": 1741,
+      "guuid": "c9689755-4500-0000-82bb-77d6cd060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "bash",
+      "pid": 1567,
+      "tgid": 1567,
+      "guuid": "bed285f7-2a00-0000-82bb-77d61f060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400100"
+    },
+    "utc_time": "2023-09-05T09:33:07.578086917Z"
+  }
+}
+{
+  "data": {
+    "exe": "/tmp/bpfdoor.mwr",
+    "command_line": "./bpfdoor.mwr",
+    "flags": "0x00004100"
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 6,
+      "name": "clone",
+      "uuid": "df68e0f8-e779-b110-0d20-7e5fdf9d361c",
+      "batch": 26
+    },
+    "task": {
+      "name": "bpfdoor.mwr",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400040"
+    },
+    "parent_task": {
+      "name": "bpfdoor.mwr",
+      "pid": 1741,
+      "tgid": 1741,
+      "guuid": "c9689755-4500-0000-82bb-77d6cd060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.579306573Z"
+  }
+}
+{
+  "data": {
+    "ancestors": "/usr/lib/systemd/systemd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/bin/bash|/usr/bin/sudo|/usr/bin/su|/usr/bin/bash|/tmp/bpfdoor.mwr",
+    "parent_exe": "/tmp/bpfdoor.mwr",
+    "command_line": "sh -c /bin/rm -f /dev/shm/kdmtmpflush;/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush && /bin/chmod 755 /dev/shm/kdmtmpflush && /dev/shm/kdmtmpflush --init && /bin/rm -f /dev/shm/kdmtmpflush",
+    "exe": {
+      "file": "/usr/bin/dash",
+      "md5": "1e6b1c887c59a315edb7eb9a315fc84c",
+      "sha1": "803ffdb71aa236aa25009bef97db1b8ad0e3c62b",
+      "sha256": "64e48365207d0c19008ba7d53d75c0de3fcd5a1590e4c40fc69c677663fedc20",
+      "sha512": "0d261d7a8d615d080e20f1e1b294f168107dc2740da1a037d9519215e67e7a72dcc0f56c0006e5fdc04b7dbbd339171e9d2bf15f8e31f295d37aff499e1bc928",
+      "size": 129816
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 1,
+      "name": "execve",
+      "uuid": "8f2fab25-ef70-3898-b52e-da2eaca820cc",
+      "batch": 27
+    },
+    "task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "bpfdoor.mwr",
+      "pid": 1741,
+      "tgid": 1741,
+      "guuid": "c9689755-4500-0000-82bb-77d6cd060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.580927874Z"
+  }
+}
+{
+  "data": {
+    "command_line": "sh -c /bin/rm -f /dev/shm/kdmtmpflush;/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush && /bin/chmod 755 /dev/shm/kdmtmpflush && /dev/shm/kdmtmpflush --init && /bin/rm -f /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/dash",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libc-2.31.so",
+      "md5": "5898fac5d2680d0d8fefdadd632b7188",
+      "sha1": "1430c57bf7ca6bd7f84a11c2cb7580fc39da07f5",
+      "sha256": "80378c2017456829f32645e6a8f33b4c40c8efa87db7e8c931a229afa7bf6712",
+      "sha512": "da6d718c0eabbd5996b8988c8659f5dd458e49675991a261d03ec1184e1588227f0ed5f08fa81c66b3e14edcd912357a4a1ef3de1bc638d35069c7399b690e29",
+      "size": 2029592
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "7fdfdfc3-38c0-61bb-eec5-16767fd052c0",
+      "batch": 28
+    },
+    "task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "bpfdoor.mwr",
+      "pid": 1741,
+      "tgid": 1741,
+      "guuid": "c9689755-4500-0000-82bb-77d6cd060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.581274749Z"
+  }
+}
+{
+  "data": {
+    "exe": "/usr/bin/dash",
+    "command_line": "sh -c /bin/rm -f /dev/shm/kdmtmpflush;/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush && /bin/chmod 755 /dev/shm/kdmtmpflush && /dev/shm/kdmtmpflush --init && /bin/rm -f /dev/shm/kdmtmpflush",
+    "flags": "0x01200000"
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 6,
+      "name": "clone",
+      "uuid": "df98547e-efa0-b1a0-4995-ed69c3d6c9bd",
+      "batch": 29
+    },
+    "task": {
+      "name": "sh",
+      "pid": 1743,
+      "tgid": 1743,
+      "guuid": "a40bef56-4500-0000-82bb-77d6cf060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400040"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.581567518Z"
+  }
+}
+{
+  "data": {
+    "ancestors": "/usr/lib/systemd/systemd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/bin/bash|/usr/bin/sudo|/usr/bin/su|/usr/bin/bash|/tmp/bpfdoor.mwr|/usr/bin/dash",
+    "parent_exe": "/usr/bin/dash",
+    "command_line": "/bin/rm -f /dev/shm/kdmtmpflush",
+    "exe": {
+      "file": "/usr/bin/rm",
+      "md5": "aa2b5496fdbfd88e38791ab81f90b95b",
+      "sha1": "f12bdba0b05e07cb677edd8245fb1d25b72a8dcc",
+      "sha256": "f31ab9fc2b32ed344c5918915600817224ce32c12258962dc40ab7e1c52319de",
+      "sha512": "318d4bc94ce589a07779a921c15d7345cba916835dd885a7a202215bc8a978dc0adfe1776d1fa1402e00c6f9b51c6d404260de35e3857e2de373da112a7e5433",
+      "size": 72056
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 1,
+      "name": "execve",
+      "uuid": "c3cc7a87-fc47-c54b-59a2-65ab9384cefd",
+      "batch": 30
+    },
+    "task": {
+      "name": "rm",
+      "pid": 1743,
+      "tgid": 1743,
+      "guuid": "a40bef56-4500-0000-82bb-77d6cf060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.582557019Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/rm -f /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/rm",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libc-2.31.so",
+      "md5": "5898fac5d2680d0d8fefdadd632b7188",
+      "sha1": "1430c57bf7ca6bd7f84a11c2cb7580fc39da07f5",
+      "sha256": "80378c2017456829f32645e6a8f33b4c40c8efa87db7e8c931a229afa7bf6712",
+      "sha512": "da6d718c0eabbd5996b8988c8659f5dd458e49675991a261d03ec1184e1588227f0ed5f08fa81c66b3e14edcd912357a4a1ef3de1bc638d35069c7399b690e29",
+      "size": 2029592
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "a0787496-a2ac-eba0-3cad-33a8c1b4448c",
+      "batch": 31
+    },
+    "task": {
+      "name": "rm",
+      "pid": 1743,
+      "tgid": 1743,
+      "guuid": "a40bef56-4500-0000-82bb-77d6cf060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.582899180Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/rm -f /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/rm",
+    "error_code": 0
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 5,
+      "name": "exit_group",
+      "uuid": "43c8c77b-8cda-5ead-14c9-db58a8b9752f",
+      "batch": 32
+    },
+    "task": {
+      "name": "rm",
+      "pid": 1743,
+      "tgid": 1743,
+      "guuid": "a40bef56-4500-0000-82bb-77d6cf060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.583099519Z"
+  }
+}
+{
+  "data": {
+    "exe": "/usr/bin/dash",
+    "command_line": "sh -c /bin/rm -f /dev/shm/kdmtmpflush;/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush && /bin/chmod 755 /dev/shm/kdmtmpflush && /dev/shm/kdmtmpflush --init && /bin/rm -f /dev/shm/kdmtmpflush",
+    "flags": "0x01200000"
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 6,
+      "name": "clone",
+      "uuid": "80d09c31-570f-148c-d99b-919de66de401",
+      "batch": 33
+    },
+    "task": {
+      "name": "sh",
+      "pid": 1744,
+      "tgid": 1744,
+      "guuid": "1ad46c57-4500-0000-82bb-77d6d0060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400040"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.583362116Z"
+  }
+}
+{
+  "data": {
+    "ancestors": "/usr/lib/systemd/systemd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/bin/bash|/usr/bin/sudo|/usr/bin/su|/usr/bin/bash|/tmp/bpfdoor.mwr|/usr/bin/dash",
+    "parent_exe": "/usr/bin/dash",
+    "command_line": "/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush",
+    "exe": {
+      "file": "/usr/bin/cp",
+      "md5": "40f10ae7ea3e44218d1a8c306f79c83f",
+      "sha1": "4b91f7a387a6edd4a7c0afb2897f1ca968c9695b",
+      "sha256": "40ea53f38efe555c09a2c1c860379190e2af94427daaa68756874154c3fa1188",
+      "sha512": "3f8daaeda736e85193342bb907d36e77cabe5b193d41bff0d92f52bf3989b7396b2bdedbd74f3a65f70096b659b047c5dda4a7502f900cd14a3beef4711fb13b",
+      "size": 153976
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 1,
+      "name": "execve",
+      "uuid": "8b78bf32-3383-f65a-439a-326b622d4355",
+      "batch": 37
+    },
+    "task": {
+      "name": "cp",
+      "pid": 1744,
+      "tgid": 1744,
+      "guuid": "1ad46c57-4500-0000-82bb-77d6d0060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.595104055Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/cp",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libselinux.so.1",
+      "md5": "b9fd0338f7e7906303bd21b2b6ec1270",
+      "sha1": "186d209e1d331e9160d6d0b03c523d862ae9d2a4",
+      "sha256": "21801f05810593a6d7699bd81df3a37a47dfd029a64156d6b1b2a14cad9f2982",
+      "sha512": "01e9f1045055404a64ad69c2a5fe8f65716ae473d6d6b947e79578cd036b3da0dbd2338ac88cb0064d0bec3bd28e37a1e2c616751d369fca1b8742147f65298d",
+      "size": 163200
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "3d247c10-4f44-8f62-a7b5-83ef6deeadef",
+      "batch": 37
+    },
+    "task": {
+      "name": "cp",
+      "pid": 1744,
+      "tgid": 1744,
+      "guuid": "1ad46c57-4500-0000-82bb-77d6d0060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.595435048Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/cp",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libacl.so.1.1.2253",
+      "md5": "e77bf61a72656a594ef49768a7d6097b",
+      "sha1": "87824e3a1281f42cb17ec488486b9ef416b61f0c",
+      "sha256": "72e529a9edb74a85ce5aee49d92e7b8126e8d77cadb538175f7fd7768d077b8f",
+      "sha512": "9692b462b486be87d2608b2a383805d21f9ca3c51449bbd100412451b948cd889dcbf46c9b01f2b618bd58179ac89ab4d4f251611dca850d6f579d6dbd1ba741",
+      "size": 39088
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "3125a23b-bf83-cb97-d7d7-dacea34b75f6",
+      "batch": 37
+    },
+    "task": {
+      "name": "cp",
+      "pid": 1744,
+      "tgid": 1744,
+      "guuid": "1ad46c57-4500-0000-82bb-77d6d0060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.595757910Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/cp",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libattr.so.1.1.2448",
+      "md5": "708453da8ebde1aaca2ca69c04d4c0a8",
+      "sha1": "de93da61b86e7f3e9bb4975ecd8bf340776bfd25",
+      "sha256": "d5f659907767da42b92c53ebb3a7c0fb02af243116a14d196064a9ce1c27fcf5",
+      "sha512": "2da8c8ae5b8d66e26505aee4e4ab68d6d40b12e2cec6fc9b24380a9dd9c60e64f174060f447bd0064ff1ee25ae42009b6e4e651deb671aea50a278c6ff1dc2d7",
+      "size": 26696
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "36f95998-2470-3f42-c563-ee910d41703a",
+      "batch": 37
+    },
+    "task": {
+      "name": "cp",
+      "pid": 1744,
+      "tgid": 1744,
+      "guuid": "1ad46c57-4500-0000-82bb-77d6d0060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.596007306Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/cp",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libc-2.31.so",
+      "md5": "5898fac5d2680d0d8fefdadd632b7188",
+      "sha1": "1430c57bf7ca6bd7f84a11c2cb7580fc39da07f5",
+      "sha256": "80378c2017456829f32645e6a8f33b4c40c8efa87db7e8c931a229afa7bf6712",
+      "sha512": "da6d718c0eabbd5996b8988c8659f5dd458e49675991a261d03ec1184e1588227f0ed5f08fa81c66b3e14edcd912357a4a1ef3de1bc638d35069c7399b690e29",
+      "size": 2029592
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "b98711c5-ead4-102f-d337-fb2846d0e830",
+      "batch": 37
+    },
+    "task": {
+      "name": "cp",
+      "pid": 1744,
+      "tgid": 1744,
+      "guuid": "1ad46c57-4500-0000-82bb-77d6d0060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.596308406Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/cp",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libpcre2-8.so.0.9.0",
+      "md5": "ba0827993df3f7dc0b8c541f139071d0",
+      "sha1": "1d58cedcddf9d5fbd9f3dcc22eefc75862f10ef9",
+      "sha256": "2ee0f443107012eefbce274fe61b18cd3a04d7e7824200eaae0c55fb65e6f1ea",
+      "sha512": "5faf50ecb5b23826a0fd503256cef5b4ca7ce98601bffa2d5619f0ae2daa4dc97ab1583be9fd2939eabba9639fb4b4f48b76d8144a6bb300d533afd6f37f90a6",
+      "size": 588488
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "b5232a0e-9d3a-93db-0732-b23803cdf3d7",
+      "batch": 37
+    },
+    "task": {
+      "name": "cp",
+      "pid": 1744,
+      "tgid": 1744,
+      "guuid": "1ad46c57-4500-0000-82bb-77d6d0060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.596537661Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/cp",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libdl-2.31.so",
+      "md5": "276752cdf5590218075a498bcc22d679",
+      "sha1": "2ac9b84a959e8a1bfb7700711fa4dd64f1fee891",
+      "sha256": "24f7ae2e7edfdfa481cc7b3685e81345888b12dc80e329bdd537bdb06148d43a",
+      "sha512": "6d1a7f916119821b3fd17ae7d1525fdfc20c21f98ae2939dd0ebed494139affa9bc8e967e1c170bfb57dc0678d7a77f707da116fa23fffde756049e5e3681927",
+      "size": 18848
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "f8b65bc6-e430-2b39-e0f6-a40ceb38eaf0",
+      "batch": 37
+    },
+    "task": {
+      "name": "cp",
+      "pid": 1744,
+      "tgid": 1744,
+      "guuid": "1ad46c57-4500-0000-82bb-77d6d0060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.596823285Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/cp",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libpthread-2.31.so",
+      "md5": "159c52b095d8b3d91f1ea32871eeba59",
+      "sha1": "7c87411860bedc2df38633bb8df6bf17ce7047ae",
+      "sha256": "cbce34589dbf72b0cf14f40d0c81f5d17610188fb7d21a1767d0d4200ca12c9e",
+      "sha512": "2c0b0b484b251f38bbc366497bb3d683ea5d07fc7259b3a4a00e0e505bebc70ed1d7c2eacc78027342cfdac7d358cb8aee320e590c50a3fbe238afa984de979c",
+      "size": 157224
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "87843038-05eb-9799-f57e-68d307a182b3",
+      "batch": 37
+    },
+    "task": {
+      "name": "cp",
+      "pid": 1744,
+      "tgid": 1744,
+      "guuid": "1ad46c57-4500-0000-82bb-77d6d0060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.597050945Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/cp",
+    "error_code": 0
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 5,
+      "name": "exit_group",
+      "uuid": "57be8cc2-45d0-a3f3-3f4d-a26f794d8995",
+      "batch": 37
+    },
+    "task": {
+      "name": "cp",
+      "pid": 1744,
+      "tgid": 1744,
+      "guuid": "1ad46c57-4500-0000-82bb-77d6d0060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.597287163Z"
+  }
+}
+{
+  "data": {
+    "exe": "/usr/bin/dash",
+    "command_line": "sh -c /bin/rm -f /dev/shm/kdmtmpflush;/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush && /bin/chmod 755 /dev/shm/kdmtmpflush && /dev/shm/kdmtmpflush --init && /bin/rm -f /dev/shm/kdmtmpflush",
+    "flags": "0x01200000"
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 6,
+      "name": "clone",
+      "uuid": "39457165-8db6-b762-4710-5e0e804ee4d5",
+      "batch": 38
+    },
+    "task": {
+      "name": "sh",
+      "pid": 1746,
+      "tgid": 1746,
+      "guuid": "79e0a558-4500-0000-82bb-77d6d2060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400040"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.598155332Z"
+  }
+}
+{
+  "data": {
+    "ancestors": "/usr/lib/systemd/systemd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/bin/bash|/usr/bin/sudo|/usr/bin/su|/usr/bin/bash|/tmp/bpfdoor.mwr|/usr/bin/dash",
+    "parent_exe": "/usr/bin/dash",
+    "command_line": "/bin/chmod 755 /dev/shm/kdmtmpflush",
+    "exe": {
+      "file": "/usr/bin/chmod",
+      "md5": "739483b900c045ae1374d6f53a86a279",
+      "sha1": "8338501c1b2d35159008e2b99663256780efbe63",
+      "sha256": "4b914d52d6077be38e126f9567f649e535cece0473a59ebbc3c16a97928fc788",
+      "sha512": "8f1e21d5af31a0f4871733bc408a5b7605f53876e1dc695200b0c5d4dc8fbb028c81dc14691bd109ebeecd8382d3c841f3ecdccd4b362a5f1bab844b868eb987",
+      "size": 63864
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 1,
+      "name": "execve",
+      "uuid": "6864d953-5f39-fda6-5fc2-03653cfb5f61",
+      "batch": 39
+    },
+    "task": {
+      "name": "chmod",
+      "pid": 1746,
+      "tgid": 1746,
+      "guuid": "79e0a558-4500-0000-82bb-77d6d2060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.598384123Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/chmod 755 /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/chmod",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libc-2.31.so",
+      "md5": "5898fac5d2680d0d8fefdadd632b7188",
+      "sha1": "1430c57bf7ca6bd7f84a11c2cb7580fc39da07f5",
+      "sha256": "80378c2017456829f32645e6a8f33b4c40c8efa87db7e8c931a229afa7bf6712",
+      "sha512": "da6d718c0eabbd5996b8988c8659f5dd458e49675991a261d03ec1184e1588227f0ed5f08fa81c66b3e14edcd912357a4a1ef3de1bc638d35069c7399b690e29",
+      "size": 2029592
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "093ee5b4-c78a-3a06-1a5e-d2390ba90b31",
+      "batch": 40
+    },
+    "task": {
+      "name": "chmod",
+      "pid": 1746,
+      "tgid": 1746,
+      "guuid": "79e0a558-4500-0000-82bb-77d6d2060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.598640888Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/chmod 755 /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/chmod",
+    "error_code": 0
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 5,
+      "name": "exit_group",
+      "uuid": "fbec1a27-63a9-8c99-da83-4588932b90f8",
+      "batch": 41
+    },
+    "task": {
+      "name": "chmod",
+      "pid": 1746,
+      "tgid": 1746,
+      "guuid": "79e0a558-4500-0000-82bb-77d6d2060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.598860150Z"
+  }
+}
+{
+  "data": {
+    "exe": "/usr/bin/dash",
+    "command_line": "sh -c /bin/rm -f /dev/shm/kdmtmpflush;/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush && /bin/chmod 755 /dev/shm/kdmtmpflush && /dev/shm/kdmtmpflush --init && /bin/rm -f /dev/shm/kdmtmpflush",
+    "flags": "0x01200000"
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 6,
+      "name": "clone",
+      "uuid": "9b4dc234-2930-7e64-5d4b-3d7215518629",
+      "batch": 42
+    },
+    "task": {
+      "name": "sh",
+      "pid": 1747,
+      "tgid": 1747,
+      "guuid": "7d64f958-4500-0000-82bb-77d6d3060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400040"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.599083320Z"
+  }
+}
+{
+  "data": {
+    "ancestors": "/usr/lib/systemd/systemd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/bin/bash|/usr/bin/sudo|/usr/bin/su|/usr/bin/bash|/tmp/bpfdoor.mwr|/usr/bin/dash",
+    "parent_exe": "/usr/bin/dash",
+    "command_line": "/dev/shm/kdmtmpflush --init",
+    "exe": {
+      "file": "/dev/shm/kdmtmpflush",
+      "md5": "",
+      "sha1": "",
+      "sha256": "",
+      "sha512": "",
+      "size": 0,
+      "error": "file not found"
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 1,
+      "name": "execve",
+      "uuid": "38789315-0485-9af9-f511-27fe97b21a1c",
+      "batch": 43
+    },
+    "task": {
+      "name": "kdmtmpflush",
+      "pid": 1747,
+      "tgid": 1747,
+      "guuid": "7d64f958-4500-0000-82bb-77d6d3060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.599306665Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/dev/shm/kdmtmpflush --init",
+    "exe": "/dev/shm/kdmtmpflush",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libc-2.31.so",
+      "md5": "5898fac5d2680d0d8fefdadd632b7188",
+      "sha1": "1430c57bf7ca6bd7f84a11c2cb7580fc39da07f5",
+      "sha256": "80378c2017456829f32645e6a8f33b4c40c8efa87db7e8c931a229afa7bf6712",
+      "sha512": "da6d718c0eabbd5996b8988c8659f5dd458e49675991a261d03ec1184e1588227f0ed5f08fa81c66b3e14edcd912357a4a1ef3de1bc638d35069c7399b690e29",
+      "size": 2029592
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "90dd2dfa-15ad-1e35-41c1-d6bdad40c2b2",
+      "batch": 44
+    },
+    "task": {
+      "name": "kdmtmpflush",
+      "pid": 1747,
+      "tgid": 1747,
+      "guuid": "7d64f958-4500-0000-82bb-77d6d3060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.599528395Z"
+  }
+}
+{
+  "data": {
+    "exe": "/dev/shm/kdmtmpflush",
+    "command_line": "/dev/shm/kdmtmpflush --init",
+    "option": "PR_SET_NAME",
+    "arg2": "0x605368",
+    "arg3": "0x0",
+    "arg4": "0x6e75722d646c6168",
+    "arg5": "0x3",
+    "success": true
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 7,
+      "name": "prctl",
+      "uuid": "c8be60da-fa83-4a6c-aa8a-cbf1d38f8520",
+      "batch": 45
+    },
+    "task": {
+      "name": "hald-runner",
+      "pid": 1747,
+      "tgid": 1747,
+      "guuid": "7d64f958-4500-0000-82bb-77d6d3060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.599747200Z"
+  }
+}
+{
+  "data": {
+    "exe": "/dev/shm/kdmtmpflush",
+    "command_line": "hald-runner",
+    "flags": "0x01200000"
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 6,
+      "name": "clone",
+      "uuid": "8eb8dec1-dd2d-6330-33f4-06b409874826",
+      "batch": 46
+    },
+    "task": {
+      "name": "hald-runner",
+      "pid": 1748,
+      "tgid": 1748,
+      "guuid": "ff313459-4500-0000-82bb-77d6d4060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400040"
+    },
+    "parent_task": {
+      "name": "hald-runner",
+      "pid": 1747,
+      "tgid": 1747,
+      "guuid": "7d64f958-4500-0000-82bb-77d6d3060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.599981692Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/dev/shm/kdmtmpflush --init",
+    "exe": "/dev/shm/kdmtmpflush",
+    "error_code": 9223372037639354469
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 5,
+      "name": "exit_group",
+      "uuid": "025b8498-4b25-eace-be7c-28797d8e79f7",
+      "batch": 47
+    },
+    "task": {
+      "name": "hald-runner",
+      "pid": 1747,
+      "tgid": 1747,
+      "guuid": "7d64f958-4500-0000-82bb-77d6d3060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.600189924Z"
+  }
+}
+{
+  "data": {
+    "exe": "/usr/bin/dash",
+    "command_line": "sh -c /bin/rm -f /dev/shm/kdmtmpflush;/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush && /bin/chmod 755 /dev/shm/kdmtmpflush && /dev/shm/kdmtmpflush --init && /bin/rm -f /dev/shm/kdmtmpflush",
+    "flags": "0x01200000"
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 6,
+      "name": "clone",
+      "uuid": "7adedd6b-0724-ac98-7fa5-1517d063585a",
+      "batch": 48
+    },
+    "task": {
+      "name": "sh",
+      "pid": 1749,
+      "tgid": 1749,
+      "guuid": "68f83559-4500-0000-82bb-77d6d5060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400040"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.600411759Z"
+  }
+}
+{
+  "data": {
+    "command_line": "hald-runner",
+    "exe": "/dev/shm/kdmtmpflush",
+    "socket": {
+      "domain": "AF_PACKET",
+      "type": "SOCK_RAW"
+    },
+    "filter": {
+      "md5": "19c9f9f52a7d7bf1f9c26dc57034873b",
+      "sha1": "c97c5ad700f7426432dbe4d6478f362714e835f0",
+      "sha256": "1a23f76646d1741946afd2d6d3ce3d0deae14198b544b09322a540c345953988",
+      "sha512": "af9fce79e05316999ae3ef82ea7a04ce299c611cb46e27154e455b9f9bea42631a5293dd42cb0d332d5e10b8ed924930321cb3433b7989e6fe9042d97338d477",
+      "len": 30,
+      "size": 240
+    },
+    "attached": true
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 22,
+      "name": "bpf_socket_filter",
+      "uuid": "839aa10e-243a-3238-b221-9f7d0c1cac95",
+      "batch": 51
+    },
+    "task": {
+      "name": "hald-runner",
+      "pid": 1748,
+      "tgid": 1748,
+      "guuid": "ff313459-4500-0000-82bb-77d6d4060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400140"
+    },
+    "parent_task": {
+      "name": "systemd",
+      "pid": 1,
+      "tgid": 1,
+      "guuid": "4b0dc405-0000-0000-82bb-77d601000000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400100"
+    },
+    "utc_time": "2023-09-05T09:33:07.600987330Z"
+  }
+}
+{
+  "data": {
+    "ancestors": "/usr/lib/systemd/systemd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/sbin/sshd|/usr/bin/bash|/usr/bin/sudo|/usr/bin/su|/usr/bin/bash|/tmp/bpfdoor.mwr|/usr/bin/dash",
+    "parent_exe": "/usr/bin/dash",
+    "command_line": "/bin/rm -f /dev/shm/kdmtmpflush",
+    "exe": {
+      "file": "/usr/bin/rm",
+      "md5": "aa2b5496fdbfd88e38791ab81f90b95b",
+      "sha1": "f12bdba0b05e07cb677edd8245fb1d25b72a8dcc",
+      "sha256": "f31ab9fc2b32ed344c5918915600817224ce32c12258962dc40ab7e1c52319de",
+      "sha512": "318d4bc94ce589a07779a921c15d7345cba916835dd885a7a202215bc8a978dc0adfe1776d1fa1402e00c6f9b51c6d404260de35e3857e2de373da112a7e5433",
+      "size": 72056
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 1,
+      "name": "execve",
+      "uuid": "b4d99b09-44a6-a557-3c3a-2e4a4efd30ae",
+      "batch": 52
+    },
+    "task": {
+      "name": "rm",
+      "pid": 1749,
+      "tgid": 1749,
+      "guuid": "68f83559-4500-0000-82bb-77d6d5060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.601341513Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/rm -f /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/rm",
+    "mapped": {
+      "file": "/usr/lib/x86_64-linux-gnu/libc-2.31.so",
+      "md5": "5898fac5d2680d0d8fefdadd632b7188",
+      "sha1": "1430c57bf7ca6bd7f84a11c2cb7580fc39da07f5",
+      "sha256": "80378c2017456829f32645e6a8f33b4c40c8efa87db7e8c931a229afa7bf6712",
+      "sha512": "da6d718c0eabbd5996b8988c8659f5dd458e49675991a261d03ec1184e1588227f0ed5f08fa81c66b3e14edcd912357a4a1ef3de1bc638d35069c7399b690e29",
+      "size": 2029592
+    }
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "8a860e7b-5d01-5cce-9bfe-e0fa1c5bee32",
+      "batch": 53
+    },
+    "task": {
+      "name": "rm",
+      "pid": 1749,
+      "tgid": 1749,
+      "guuid": "68f83559-4500-0000-82bb-77d6d5060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.601618639Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/rm -f /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/rm",
+    "path": "/dev/shm/kdmtmpflush",
+    "success": true
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 86,
+      "name": "file_unlink",
+      "uuid": "c75fd4a8-b425-6652-f3cf-1c10cb35e6bc",
+      "batch": 54
+    },
+    "task": {
+      "name": "rm",
+      "pid": 1749,
+      "tgid": 1749,
+      "guuid": "68f83559-4500-0000-82bb-77d6d5060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.601734356Z"
+  }
+}
+{
+  "data": {
+    "command_line": "/bin/rm -f /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/rm",
+    "error_code": 0
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 5,
+      "name": "exit_group",
+      "uuid": "82431f1b-2b73-c4bc-630c-80512c6b3461",
+      "batch": 55
+    },
+    "task": {
+      "name": "rm",
+      "pid": 1749,
+      "tgid": 1749,
+      "guuid": "68f83559-4500-0000-82bb-77d6d5060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.602034784Z"
+  }
+}
+{
+  "data": {
+    "command_line": "sh -c /bin/rm -f /dev/shm/kdmtmpflush;/bin/cp ./bpfdoor.mwr /dev/shm/kdmtmpflush && /bin/chmod 755 /dev/shm/kdmtmpflush && /dev/shm/kdmtmpflush --init && /bin/rm -f /dev/shm/kdmtmpflush",
+    "exe": "/usr/bin/dash",
+    "error_code": 18446612735505727488
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 5,
+      "name": "exit_group",
+      "uuid": "67b8c858-dec1-e88b-d18a-ec497f525706",
+      "batch": 56
+    },
+    "task": {
+      "name": "sh",
+      "pid": 1742,
+      "tgid": 1742,
+      "guuid": "489abe56-4500-0000-82bb-77d6ce060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "bpfdoor.mwr",
+      "pid": 1741,
+      "tgid": 1741,
+      "guuid": "c9689755-4500-0000-82bb-77d6cd060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "utc_time": "2023-09-05T09:33:07.602236951Z"
+  }
+}
+{
+  "data": {
+    "command_line": "./bpfdoor.mwr",
+    "exe": "/tmp/bpfdoor.mwr",
+    "error_code": 4064
+  },
+  "info": {
+    "host": {
+      "hostname": "ebpf-ubuntu-20.04",
+      "container": null
+    },
+    "event": {
+      "source": "kunai",
+      "id": 5,
+      "name": "exit_group",
+      "uuid": "233669a9-5358-b94f-6977-bfb1e9ab9999",
+      "batch": 68
+    },
+    "task": {
+      "name": "bpfdoor.mwr",
+      "pid": 1741,
+      "tgid": 1741,
+      "guuid": "c9689755-4500-0000-82bb-77d6cd060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400000"
+    },
+    "parent_task": {
+      "name": "bash",
+      "pid": 1567,
+      "tgid": 1567,
+      "guuid": "bed285f7-2a00-0000-82bb-77d61f060000",
+      "uid": 0,
+      "gid": 0,
+      "namespaces": {
+        "mnt": 4026531840
+      },
+      "flags": "0x00400100"
+    },
+    "utc_time": "2023-09-05T09:33:09.580953895Z"
+  }
+}

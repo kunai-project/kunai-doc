@@ -27,8 +27,6 @@ In the Linux kernel, there is no notion of **process** or **thread**, everything
     },
     // Event related information
     "event": {
-      // A string which can be used by external tools to identify kunai's logs
-      "source": "kunai",
       // Event type identifier
       "id": 1,
       // Event type name

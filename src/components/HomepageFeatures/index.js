@@ -5,29 +5,28 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'It Simply Works',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/kunai.svg').default,
     description: (
       <>
-        No fancy dependencies, just a single binary you can run everywhere
+        Everything has been thought to provide you the best and simplest experience possible.
       </>
     ),
   },
   {
     title: 'Powered by Rust and eBPF',
-    Svg: require('@site/static/img/aya.svg').default,
+    Svg: require('@site/static/img/bee-ferry.svg').default,
     description: (
       <>
-        Kunai uses the great&nbsp;<a href="https://github.com/aya-rs">Aya library</a> so that it ends up being a consistent Rust project easy to maintain and extend.
+        Kunai utilizes the powerful&nbsp;<a href="https://github.com/aya-rs">Aya library</a> to provide a consistent Rust project that is easy to maintain and extend.
       </>
     ),
   },
   {
     title: 'Container Support',
-    Svg : require('@site/static/img/docker.svg').default,
+    Svg: require('@site/static/img/docker.svg').default,
     description: (
       <>
-        Kunai gives you the ability to monitor what is happening inside your containers and apply all your
-        threat-hunting rules seamlessly.
+        Kunai empowers you with the ability to monitor activities within your containers and seamlessly apply all your threat-hunting rules.
       </>
     ),
   },

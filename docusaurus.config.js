@@ -4,9 +4,12 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+// Used to debug production build issues faster
+const isDev = !!process.env.DEVELOP;
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Linux Threat-Hunting tool',
+  title: 'Kunai',
   tagline: "Bring your Linux Threat-Hunting capabilities to the next level",
   favicon: 'img/favicon.ico',
 
@@ -38,18 +41,23 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          //includeCurrentVersion: isDev,
+          includeCurrentVersion: true,
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/0xrawsec/kunai-doc/tree/main/packages/create-docusaurus/templates/shared/',
+          //editUrl:'https://github.com/0xrawsec/kunai-doc/tree/main/packages/create-docusaurus/templates/shared/',
+          versions: {
+            current: {
+              label: `Unreleased`,
+            },
+          },
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/kunai-doc/tree/main/packages/create-docusaurus/templates/shared/',
+          //editUrl: 'https://github.com/facebook/kunai-doc/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -62,9 +70,15 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/kunai-social-card.jpg',
+      /*
+      announcementBar: {
+        id: 'announcementBar-1', // Increment on change
+        content: `⭐️ If you like Kunai, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/0xrawsec/kunai">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/0xrawsec">Twitter</a>`,
+      },
+      */
       navbar: {
-        title: '',
+        title: 'Kunai',
         logo: {
           alt: 'Kunai',
           src: 'img/logo.svg',
@@ -74,13 +88,25 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorials',
+            label: 'Documentation',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/0xrawsec/kunai',
-            label: 'GitHub',
+            type: 'docsVersionDropdown',
             position: 'right',
+            //dropdownItemsAfter: [{ to: '/versions', label: 'All versions' }],
+            //dropdownActiveClassDisabled: true,
+          },
+          {
+            href: 'https://github.com/sponsors/0xrawsec',
+            position: 'right',
+            className: 'button button--secondary',
+            html: "❤️ Sponsor"
+          },
+          {
+            href: 'https://github.com/0xrawsec/kunai',
+            position: 'right',
+            className: "header-github-link",
           },
         ],
       },
@@ -91,7 +117,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Documentation',
                 to: '/docs/quickstart',
               },
             ],
@@ -120,6 +146,10 @@ const config = {
                 label: 'GitHub',
                 href: 'https://github.com/0xrawsec/kunai',
               },
+              {
+                href: 'https://github.com/sponsors/0xrawsec',
+                label: 'Sponsor',
+              },
             ],
           },
         ],
@@ -129,6 +159,9 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      colorMode: {
+        defaultMode: 'dark',
+      }
     }),
 };
 
