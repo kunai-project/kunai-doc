@@ -42,7 +42,7 @@ meta:
 # acts as a pre-filter to speed up engine
 match-on:
     events:
-        # we match kunai events execve and execve_script event ids
+        # we match on kunai execve and execve_script event ids
         kunai: [1, 2]
 matches:
     # 0x200000 is the flag for KTHREAD
