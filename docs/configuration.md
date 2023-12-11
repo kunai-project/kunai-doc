@@ -113,7 +113,7 @@ enable = true
 ```
 
 :::info 
-Enabling/disabling logs will impact the performance of the tool. If you are looking for advanced log filtering please look at [log filtering documentation](advanced/log_filtering.md)
+Enabling/disabling logs will impact the performance of the tool. If you are looking for advanced log filtering please look at [log filtering documentation](./advanced/rule_configuration)
 :::
 
 ## Advanced CLI usage
