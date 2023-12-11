@@ -59,7 +59,10 @@ In the Linux kernel, there is no notion of **process** or **thread**, everything
       "namespaces": {
         // mnt namespace id
         "mnt": 4026532389
-      }
+      },
+      // task_struct flags https://elixir.bootlin.com/linux/v6.6.5/source/include/linux/sched.h#L767
+      // combination of process flags https://elixir.bootlin.com/linux/v6.6.5/source/include/linux/sched.h#L1726
+      "flags": "0x400000"
     },
     // Information about the parent task. This section
     // contains the same kind of information as the task section
@@ -72,7 +75,8 @@ In the Linux kernel, there is no notion of **process** or **thread**, everything
       "gid": 1000000,
       "namespaces": {
         "mnt": 4026532389
-      }
+      },
+      "flags": "0x400000"
     },
     // Time at which the event gets processed and printed.
     "utc_time": "2023-06-26T07:12:55.030695982Z"
