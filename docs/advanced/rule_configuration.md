@@ -55,8 +55,13 @@ condition: not $task_is_kthread and $kthread_names
 severity: 10
 ```
 
-Whenever the above rule matches a **Kunai** event, the event will be modified and
-will contain a new section named `detection`.
+If you want to try the above rule and see
+how **Kunai** behaves when loaded with detection rules, you can do it easily:
+1. dump the above rule in a file
+1. run `kunai -r path_to_your_file`
+1. open another terminal and trigger the rule by executing `cp /usr/bin/ls /tmp/kworker && /tmp/kworker`
+
+If you have made the experiment, you may have noted that when the rule matches the event is modified and contains a new section named `detection`. 
 
 <details>
 <summary>View modified event</summary>
@@ -131,7 +136,8 @@ will contain a new section named `detection`.
 
 :::tip
 * if several rules match a single event, rule name(s) will appear in `.detection.rules`
-* matching rules' `tags` and `attack` (MITRE ATT&CK) ids will stack up respectively in `.detection.tags` and `.detection.attack` 
+* matching rules' `tags` and `attack` (MITRE ATT&CK) ids will stack up respectively in `.detection.tags` and `.detection.attack`
+* severities of **rules matching** are summed and put in `.detection.severity`. Severity is bounded to **10**.
 :::
 
 ## Filtering Rules
