@@ -183,6 +183,9 @@ condition: not $browser
 
 ## Memo about **Kunai** Rules
 
+1. rules are written in [YAML](https://yaml.org/)
+1. several rules can be defined in a single file (see [YAML documents](https://yaml.org/spec/1.2.2/#chapter-9-document-stream-productions))
+    * put **a line** with `---` before rule starts and **a line**  with `...` after rule ends
 1. one can use **Kunai** with rules either from from [config](../configuration#configuration-file) or from [cli](../configuration#advanced-cli-usage)
 1. a rule can either be a **detection** OR a **filtering** rule
     * filtering rules output event **as is**
