@@ -17,26 +17,27 @@ The code responsible of generating this event is one of the most complex so it i
 ```json
 {
   "data": {
-    "command_line": "lxd --logfile /var/snap/lxd/common/lxd/logs/lxd.log --group lxd",
-    "exe": "/snap/lxd/24061/bin/lxd",
-    "query": "cloud-images.ubuntu.com",
+    "command_line": "/usr/lib/firefox/firefox --private-window https://github.com",
+    "exe": "/usr/lib/firefox/firefox",
+    "query": "live.github.com",
     "proto": "udp",
-    "response": "2620:2d:4000:1::17;2620:2d:4000:1::1a",
+    "response": "140.82.114.25",
     "dns_server": {
-      "ip": "127.0.0.53",
+      "ip": "192.168.1.1",
       "port": 53,
-      "public": true
+      "public": false,
+      "is_v6": false
     }
   },
   "info": {
     ...
     "event": {
-        ...
-        "id": 61,
-        "name": "dns_query",
-        ...
+      "source": "kunai",
+      "id": 61,
+      "name": "dns_query",
+      "uuid": "c8e6e73a-737c-bd07-d140-ac8d3477b08c",
+      "batch": 14
     },
     ...
-  }
 }
 ```
