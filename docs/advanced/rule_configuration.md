@@ -192,11 +192,11 @@ condition: not $browser
 1. rules are written in [YAML](https://yaml.org/)
 1. several rules can be defined in a single file (see [YAML documents](https://yaml.org/spec/1.2.2/#chapter-9-document-stream-productions))
     * put **a line** with `---` before rule starts and **a line**  with `...` after rule ends
-1. one can use **Kunai** with rules either from from [config](../configuration#configuration-file) or from [cli](../configuration#advanced-cli-usage)
-1. a rule can either be a **detection** OR a **filtering** rule
+1. one can use **Kunai** with rules either from [config](../configuration#configuration-file) or from [cli](../configuration#advanced-cli-usage)
+1. a rule can either be a **detection** or a **filtering** rule
     * filtering rules output event **as is**
     * detection rules output event with **detection information** in `.detection` section
-1. `match-on` section is very important as it allow to quickly filter events
+1. `match-on` section is very important as it allows to quickly filter events
 1. every `match` in `matches` must be in the form `$OPERAND: FIELD_PATH OPERATOR 'VALUE'`
     * `FIELD_PATH`: **field's absolute path** starting with `.`, separated by `.`
     * `OPERATOR`: 
@@ -204,7 +204,7 @@ condition: not $browser
         * `>=`, `<=`, `>`, `<` : **comparison operators** &rarr; `VALUE` must be a **number**
         * `&=` : **flag checking operator** &rarr; `VALUE` must be a **number**
         * `~=` : **regex operator** &rarr; `VALUE` must be a **string** regex following [syntax](https://docs.rs/regex/latest/regex/#syntax)
-    * every **field value** found at `FIELD_PATH` are expected to be of the same type than `VALUE`
+    * every **field value** found at `FIELD_PATH` is expected to be of the same type than `VALUE`
 1. `condition` supports `not`, `and` and `or` keywords
 
 
