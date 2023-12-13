@@ -58,7 +58,7 @@ severity: 10
 If you want to try the above rule and see
 how **Kunai** behaves when loaded with detection rules, you can do it easily:
 1. dump the above rule in a file
-1. run `kunai -r path_to_your_file`
+1. run `sudo kunai -r path_to_your_file`
 1. open another terminal and trigger the rule by executing `cp /usr/bin/ls /tmp/kworker && /tmp/kworker`
 
 If you have made the experiment, you may have noted that when the rule matches the event is modified and contains a new section named `detection`. 
