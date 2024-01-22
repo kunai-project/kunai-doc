@@ -97,14 +97,14 @@ const config = {
             //dropdownItemsAfter: [{ to: '/versions', label: 'All versions' }],
             //dropdownActiveClassDisabled: true,
           },
-          {
+          /*{
             href: 'https://github.com/sponsors/0xrawsec',
             position: 'right',
             className: 'button button--secondary',
             html: "❤️ Sponsor"
-          },
+          },*/
           {
-            href: 'https://github.com/0xrawsec/kunai',
+            href: 'https://github.com/kunai-project/kunai',
             position: 'right',
             className: "header-github-link",
           },
