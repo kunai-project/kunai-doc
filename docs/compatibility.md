@@ -4,7 +4,7 @@ sidebar_position: 1000
 
 # Compatibility
 
-Kunai has been built to be compatible with all the **Linux LTS** kernels(from **5.4** to **6.1** at the time of writing). Compatibility is tested in our **CI/CD** pipeline at every modification to guarantee stability. 
+Kunai has been built to be compatible with all the **Linux LTS** kernels(from **5.4** to **6.6** at the time of writing). Compatibility is tested in our **CI/CD** pipeline at every modification to guarantee stability. 
 
 Even with this rigorous testing it is possible that the program crashes before it can even start monitoring. If that happens to you **do not panic**, it does not mean the tool is bad, it just means your kernel is not supported yet, for a reason or another. Having a single binary fitting to several kernels is great for deployment however this has a cost: the programs needs to be aware of some of the changes made between the kernel versions.
 
@@ -30,7 +30,7 @@ In order to get your kernel version, run the following command `uname -r`, then 
   </tr>
   <tr>
     <td>Archlinux</td>
-    <td>5.18 to 6.1</td>
+    <td>5.18 to 6.6</td>
   </tr>
 </table> 
 </html>

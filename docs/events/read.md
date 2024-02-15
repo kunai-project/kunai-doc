@@ -18,19 +18,25 @@ If you decide to enable these events (disabled by default), you must be aware th
 ```json
 {
   "data": {
-    "command_line": "useradd ubuntu --comment Ubuntu --groups adm,audio,cdrom,dialout,dip,floppy,lxd,netdev,plugdev,sudo,video --shell /bin/bash -m",
-    "exe": "/usr/sbin/useradd",
-    "path": "/lib/x86_64-linux-gnu/libsepol.so.1"
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/zsh",
+    "command_line": "git diff --no-ext-diff --ignore-submodules=dirty --quiet --exit-code",
+    "exe": {
+      "file": "/usr/bin/git"
+    },
+    "path": "/usr/lib/libz.so.1.3.1"
   },
   "info": {
-    ...
+    "host": "...",
     "event": {
-        ...
-        "id": 81,
-        "name": "read",
-        ...
+      "source": "kunai",
+      "id": 81,
+      "name": "read",
+      "uuid": "902d47f1-dd0b-0313-582b-2083ba0fee1c",
+      "batch": 65
     },
-    ...
+    "task": "...",
+    "parent_task": "...",
+    "utc_time": "2024-02-12T21:58:22.097038200Z"
   }
 }
 ```

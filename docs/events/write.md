@@ -17,19 +17,25 @@ If you decide to enable these events (disabled by default), you must be aware th
 ```json
 {
   "data": {
-    "command_line": "lxd --logfile /var/snap/lxd/common/lxd/logs/lxd.log --group lxd",
-    "exe": "/snap/lxd/24061/bin/lxd",
-    "path": "/var/snap/lxd/common/lxd/images/c533845b5db1747674ee915cbb20df6eb47c953bb7caf1fec5b35ae9ccf98c18.rootfs"
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/bash|/usr/bin/gcc",
+    "command_line": "as --64 -o /tmp/cc5SLgFb.o /tmp/ccDONlAi.s",
+    "exe": {
+      "file": "/usr/bin/as"
+    },
+    "path": "/tmp/cc5SLgFb.o"
   },
   "info": {
-    ...
+    "host": "...",
     "event": {
-        ...
-        "id": 83,
-        "name": "write",
-        ...
+      "source": "kunai",
+      "id": 83,
+      "name": "write",
+      "uuid": "4d118514-c06d-9699-b2cd-f33fdb94c494",
+      "batch": 67
     },
-    ...
+    "task": "...",
+    "parent_task": "...",
+    "utc_time": "2024-02-12T21:58:23.237691754Z"
   }
 }
 ```

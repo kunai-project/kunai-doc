@@ -13,36 +13,42 @@ Some fields might set to `null`, this is when the information is not available f
 ```json
 {
   "data": {
-    "command_line": "/sbin/init maybe-ubiquity",
-    "exe": "/usr/lib/systemd/systemd",
-    "id": 166,
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/bash|/usr/bin/sudo|/usr/bin/sudo|/usr/bin/timeout",
+    "command_line": "./target/x86_64-unknown-linux-musl/release/kunai",
+    "exe": {
+      "file": "/home/kunai/target/x86_64-unknown-linux-musl/release/kunai"
+    },
+    "id": 3867,
     "prog_type": {
-      "id": 15,
-      "name": "cgroup_device"
+      "id": 2,
+      "name": "kprobe"
     },
-    "tag": "c8b47a902f1cc68b",
+    "tag": "1cf73c91aee8b608",
     "attached_func": "",
-    "name": "",
-    "ksym": "bpf_prog_c8b47a902f1cc68b",
+    "name": "clone.enter.sec",
+    "ksym": "bpf_prog_1cf73c91aee8b608_security_task_alloc",
     "bpf_prog": {
-      "md5": "fb32a4f4209fb18235bd125a659ea9ca",
-      "sha1": "c8b47a902f1cc68b1531014317cd140f606df9b3",
-      "sha256": "4b13b8318fb7df939cdbe0e8483a1a7a56150472db38ff77adf86455eeddb447",
-      "sha512": "f7d7e03884a6fa6e2a6f7ffa7bb9089ecd047b8d0c9759b7c372843d5eac618a15cb3cd240753035d9b629f52834c93a98cdf10c262b9aeac45258c262ecab6b",
-      "size": 464
+      "md5": "78bd0ea87eb4d7d119d3b27b8c762af0",
+      "sha1": "15935e96d83f2ad5ad588fd746387c0905aaf918",
+      "sha256": "8ff6eaea0c4fd5dea0cc97c7a326dfac68c8db324bc2b6c421b991a408041444",
+      "sha512": "dd4206aa65c5ec841be4c53f9af572471580d72c552ff40bfab308fa5767bc24814681541060ac0b0c3351036cc9bcc0c40ba4b577d1ff426d525bd0bcb8b346",
+      "size": 15096
     },
-    "verified_insns": null,
+    "verified_insns": 74814,
     "loaded": true
   },
   "info": {
-    ...
+    "host": "...",
     "event": {
-        ...
-        "id": 21,
-        "name": "bpf_prog_load",
-        ...
+      "source": "kunai",
+      "id": 21,
+      "name": "bpf_prog_load",
+      "uuid": "40bfeefc-b429-0411-6286-1ceb5ea630b5",
+      "batch": 38
     },
-    ...
+    "task": "...",
+    "parent_task": "...",
+    "utc_time": "2024-02-12T21:58:18.287709663Z"
   }
 }
 ```

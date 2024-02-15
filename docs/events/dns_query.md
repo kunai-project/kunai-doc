@@ -17,11 +17,14 @@ The code responsible of generating this event is one of the most complex so it i
 ```json
 {
   "data": {
-    "command_line": "/usr/lib/firefox/firefox --private-window https://github.com",
-    "exe": "/usr/lib/firefox/firefox",
-    "query": "live.github.com",
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/bash",
+    "command_line": "curl https://why.kunai.rocks",
+    "exe": {
+      "file": "/usr/bin/curl"
+    },
+    "query": "0xrawsec.github.io",
     "proto": "udp",
-    "response": "140.82.114.25",
+    "response": "185.199.111.153;185.199.110.153;185.199.109.153;185.199.108.153",
     "dns_server": {
       "ip": "192.168.1.1",
       "port": 53,
@@ -30,14 +33,18 @@ The code responsible of generating this event is one of the most complex so it i
     }
   },
   "info": {
-    ...
+    "host": "...",
     "event": {
       "source": "kunai",
       "id": 61,
       "name": "dns_query",
-      "uuid": "c8e6e73a-737c-bd07-d140-ac8d3477b08c",
-      "batch": 14
+      "uuid": "6c106f3d-cf35-8e27-2f21-24ff6e505fae",
+      "batch": 67
     },
-    ...
+    "task": "...",
+    "parent_task": "...",
+    "utc_time": "2024-02-12T21:58:23.240891687Z"
+  }
 }
 ```
+

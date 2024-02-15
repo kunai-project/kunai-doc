@@ -9,21 +9,26 @@ Event generated when a file gets unlinked
 ```json
 {
   "data": {
-    "command_line": "rm /tmp/test.txt",
-    "exe": "/usr/bin/rm",
-    "path": "/tmp/test.txt",
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/udevadm",
+    "command_line": "(udev-worker)",
+    "exe": {
+      "file": "/usr/bin/udevadm"
+    },
+    "path": "/run/udev/watch/557",
     "success": true
   },
   "info": {
-    ...
+    "host": "...",
     "event": {
       "source": "kunai",
       "id": 86,
       "name": "file_unlink",
-      "uuid": "aa5f63c3-08b0-ab65-c419-62596fbd56c4",
-      "batch": 74
+      "uuid": "d4927cf9-28c1-5c82-ea79-d3f235d2843f",
+      "batch": 28
     },
-    ...
+    "task": "...",
+    "parent_task": "...",
+    "utc_time": "2024-02-12T21:58:17.433963633Z"
   }
 }
-```
+``

@@ -8,44 +8,34 @@ A task is being cloned/forked. This means that a new task will be created
 on the system.
 
 :::tip new task
-* The information related to the new task will appear under the `.info.task` 
+* The information related to the **new task** (i.e. cloned/forked) will appear under the `.info.task` 
 section of this event.
-* If there is not `execve`, the executable of the task remains the same
+* If there is not `execve` following, the executable of the task remains the same
+* `.data.flags` is the **flags mask** (c.f. [manual](https://www.man7.org/linux/man-pages/man2/clone.2.html)) passed to `clone`
 :::
 
 ```json
 {
   "data": {
-    "exe": "/usr/bin/bash",
-    "command_line": "bash",
-    // flags passed to the clone familly syscalls
-    "flags": "0x01200000"
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt",
+    "command_line": "zsh",
+    "exe": {
+      "file": "/usr/bin/zsh"
+    },
+    "flags": "0x1200000"
   },
   "info": {
-    ...
-    "task": {
-      "name": "bash",
-      // pid of the new task
-      "pid": 3119,
-      // tgid of the new task
-      "tgid": 3119,
-      // guuid of the new task
-      "guuid": "345db7a0-5236-0000-fd99-a1192f0c0000",
-      "uid": 0,
-      "gid": 0,
-      "namespaces": {
-        "mnt": 4026531840
-      }
-    },
-    ...
+    "host": "...",
     "event": {
-        ...
-        "id": 6,
-        "name": "clone",
-        ...
+      "source": "kunai",
+      "id": 6,
+      "name": "clone",
+      "uuid": "ecccb270-b631-84e6-f23a-5b31696e1792",
+      "batch": 276
     },
-    ...
+    "task": "...",
+    "parent_task": "...",
+    "utc_time": "2024-02-13T08:35:10.801423351Z"
   }
 }
-
 ```

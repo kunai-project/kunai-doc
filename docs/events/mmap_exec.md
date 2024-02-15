@@ -13,29 +13,35 @@ This will event will **catch only** shared-objects loaded with the common loadin
 ```json
 {
   "data": {
-    "command_line": "(rsyslogd)",
-    "exe": "/lib/systemd/systemd",
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/bash",
+    "command_line": "curl https://why.kunai.rocks",
+    "exe": {
+      "file": "/usr/bin/curl"
+    },
     // information about mmapped executable
     "mapped": {
       // file being mmapped
-      "file": "/lib/x86_64-linux-gnu/libnss_systemd.so.2",
+      "file": "/usr/lib/libnss_mdns_minimal.so.2",
       // metadata
-      "md5": "a551d4bc40075d43bcd62dfc3d0eb321",
-      "sha1": "d929a47d74ef49e0f3a58681dea800f4bb9faac4",
-      "sha256": "8d7a135968d451205575e2772e5025a3627dc06b68ea2b2f6d53b3975bc0f015",
-      "sha512": "a7fd19c60db2cfc7bf46092aaf7c4ca6351e2720ea1291187b1e5e9b1dcf22e7b56e246ae4ae2d9eadd9ac9e409787cac91a536fdb0fe992d3de934417d6eec5",
-      "size": 253944
+      "md5": "76d1932173df8d0f0daeef5071ab1886",
+      "sha1": "c40b486b6d453cc3d8be2cefd92811803ec1f36d",
+      "sha256": "11cf188bb403da8f1683de157a44a2ae63ad812f44f9741ce52a9524a7c81d5a",
+      "sha512": "e62d38ed78c97b3826c676e6528c9952e67a0b56bf48c63f2c5f5052d627cf8b7ffd2d87d56f402646043c607f0fbc4c2c78bec93d5c33498e3ed734b763ef25",
+      "size": 18184
     }
   },
   "info": {
-    ...
+    "host": "...",
     "event": {
-        ...
-        "id": 41,
-        "name": "mmap_exec",
-        ...
+      "source": "kunai",
+      "id": 41,
+      "name": "mmap_exec",
+      "uuid": "04106c04-bb4b-4958-10b4-78a77952fa70",
+      "batch": 67
     },
-    ...
+    "task": "...",
+    "parent_task": "...",
+    "utc_time": "2024-02-12T21:58:23.240763441Z"
   }
 }
 ```

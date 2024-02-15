@@ -13,36 +13,31 @@ This event gets generated only when `execve` syscall is successful
 ```json
 {
   "data": {
-    // list of ancestors of that task (| separated)
-    "ancestors": "/usr/lib/systemd/systemd|/snap/lxd/24061/bin/lxd|/snap/lxd/
-    24061/bin/lxd",
-    // parent binary
-    "parent_exe": "/snap/lxd/24061/bin/lxd",
-    // command line
-    "command_line": "/bin/systemd-tmpfiles --create --remove --boot --exclude-prefix=/dev",
-    // information related to the current executable of the task
-    // if the event happen in a container all information is
-    // relative to the container
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/zsh",
+    "parent_exe": "/usr/bin/zsh",
+    "command_line": "git rev-parse --quiet --verify HEAD",
     "exe": {
-      // file on disk
-      "file": "/bin/systemd-tmpfiles",
-      // metadata of the file
-      "md5": "c4c46154ce57c0a18b6a080df30e51ef",
-      "sha1": "c90ddb71b76dd32fefb5285edc19b06ead09a148",
-      "sha256": "39546d8fcf1cc7f0f0a6fa058174b04a748305c3fdc17574476e74f11ede4577",
-      "sha512": "c31d7fe7443004ace75fb86eaf0cd73dccb38a732f6b9f42246785549b6da810eae3bb91ab04d84eb42e30e1b9edad0f36d4c9fe49154beb6d4a3ef8b23fbb54",
-      "size": 71752
+      "file": "/usr/bin/git",
+      "md5": "7df180fdcbd91f2d5e119ad4eca85d38",
+      "sha1": "a90827d841b5a33703227764e2f62a487cc9cbf3",
+      "sha256": "30eccaee4cda7ed541c143bf73c3fd1266a8a17302dc362da487be72f5ac3500",
+      "sha512": "dde3c20e7974234ecee33759574706ef5644d12b363a29d090984d1ce09ca246e27c8e7496d67c035d6817f8a3c2665cffbff26904bd9283cf5abb08ff888dff",
+      "size": 4180608
     }
   },
   "info": {
-    ...
+    "host": "...",
     "event": {
-        ...
-        "id": 1,
-        "name": "execve",
-        ...
+      "source": "kunai",
+      "id": 1,
+      "name": "execve",
+      "uuid": "88780e39-3308-e9a9-3f23-5c69475b3ccf",
+      "batch": 294
     },
-    ...
+    "task": "...",
+    "parent_task": "...",
+    "utc_time": "2024-02-13T08:35:12.881471231Z"
   }
 }
 ```
+

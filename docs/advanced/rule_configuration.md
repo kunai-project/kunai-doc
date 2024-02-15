@@ -1,5 +1,6 @@
 ---
 title: Configuration with Rules
+sidebar_position: 1
 ---
 
 Using **Kunai** to monitor every single event happening on a system is nice as it gives a very deep insight of what is going on. However, this approach generates loads of events. While it might be the way to go for some **Kunai** users, some others might be interested into detecting only very specific events (based on configurable rules) and show only those ones. This is exactly the topic we are going to tackle in this section of the documentation.

@@ -9,19 +9,26 @@ Event generated when a thread-group (process and all its threads) exits.
 ```json
 {
   "data": {
-    "command_line": "/sbin/apparmor_parser --write-cache --replace --cache-loc=/etc/apparmor.d/cache -- /etc/apparmor.d/lxc-containers",
-    "exe": "/sbin/apparmor_parser",
-    "error_code": 18446650047273402000
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/zsh",
+    "command_line": "git rev-parse --show-toplevel",
+    "exe": {
+      "file": "/usr/bin/git"
+    },
+    "error_code": 0
   },
   "info": {
-    ...
+    "host": "...",
     "event": {
-        ...
-        "id": 5,
-        "name": "exit_group",
-        ...
+      "source": "kunai",
+      "id": 5,
+      "name": "exit_group",
+      "uuid": "80f4dc9f-9114-eff1-3686-7785f7472a1f",
+      "batch": 85
     },
-    ...
+    "task": "...",
+    "parent_task": "...",
+    "utc_time": "2024-02-12T21:58:25.540539123Z"
   }
 }
 ```
+

@@ -127,7 +127,7 @@ Options:
       --debug
           Enable debugging
   -c, --config <FILE>
-          Specify a configuration file to use. Command line options superseed the ones specified in the configuration file.
+          Specify a configuration file to use. Command line options supersede the ones specified in the configuration file.
       --dump-config
           Prints a default configuration to stdout
       --show-events
@@ -135,11 +135,13 @@ Options:
       --exclude <EXCLUDE>
           Exclude events by name (comma separated)
       --include <INCLUDE>
-          Include events by name (comma separated). Superseeds any exclude filter.
+          Include events by name (comma separated). Supersedes any exclude filter.
       --max-buffered-events <MAX_BUFFERED_EVENTS>
           Increase the size of the buffer shared between eBPF probes and userland
   -r, --rule-file <FILE>
-          Detection/filtering rule file. Superseeds configuration file
+          Detection/filtering rule file. Supersedes configuration file
+  -i, --ioc-file <FILE>
+          File containing IoCs (json line)
   -v, --verbose...
           Set verbosity level, repeat option for more verbosity.
   -s, --silent
