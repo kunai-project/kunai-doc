@@ -6,6 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/duotoneDark');
 
 // Used to debug production build issues faster
 const isDev = !!process.env.DEVELOP;
+const orgName = 'kunai-project'
+const repoName = 'kunai-doc'
+const editUrl = 'https://github.com/' + orgName + '/' + repoName + '/tree/main/'
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -21,8 +24,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'rawsec', // Usually your GitHub org/user name.
-  projectName: 'kunai', // Usually your repo name.
+  organizationName: orgName, // Usually your GitHub org/user name.
+  projectName: repoName, // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -46,10 +49,11 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          //editUrl:'https://github.com/0xrawsec/kunai-doc/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: editUrl,
+          lastVersion: '0.1.0',
           versions: {
             current: {
-              label: `Unreleased`,
+              label: `0.2.0`,
             },
           },
         },
@@ -57,7 +61,7 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          //editUrl: 'https://github.com/facebook/kunai-doc/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: editUrl,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -104,7 +108,7 @@ const config = {
             html: "❤️ Sponsor"
           },*/
           {
-            href: 'https://github.com/kunai-project/kunai',
+            href: 'https://github.com/' + orgName + '/' + repoName,
             position: 'right',
             className: "header-github-link",
           },
@@ -130,8 +134,12 @@ const config = {
                 href: 'https://discord.gg/AUMaBvHvNU',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/0xrawsec',
+                label: 'Mastodon',
+                href: 'https://infosec.exchange/@kunai_project',
+              },
+              {
+                label: 'X/Twitter',
+                href: 'https://twitter.com/kunai_project',
               },
             ],
           },
@@ -144,16 +152,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/0xrawsec/kunai',
-              },
-              {
-                href: 'https://github.com/sponsors/0xrawsec',
-                label: 'Sponsor',
+                href: 'https://github.com/' + orgName + '/' + repoName,
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} RawSec, sàrl Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Kunai Project, Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
