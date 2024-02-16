@@ -108,7 +108,7 @@ const config = {
             html: "❤️ Sponsor"
           },*/
           {
-            href: 'https://github.com/' + orgName + '/' + repoName,
+            href: 'https://github.com/' + orgName + '/',
             position: 'right',
             className: "header-github-link",
           },
@@ -152,7 +152,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/' + orgName + '/' + repoName,
+                href: 'https://github.com/' + orgName + '/',
               },
             ],
           },
