@@ -19,7 +19,7 @@ In the Linux kernel, there is no notion of **process** or **thread**, everything
     // Host related information
     "host": {
       // Unique host uuid
-      "uuid": "b7ec95e3-b49f-57fa-b719-dea1c56f5448",
+      "uuid": "c030b40d-0eab-417b-b33a-22d952357984",
       // Hostname of the host running kunai
       "name": "whiterose",
       // Container information if any, null otherwise
