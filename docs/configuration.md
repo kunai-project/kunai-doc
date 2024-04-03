@@ -19,6 +19,9 @@ Using `--dump-config` option gives you a view on the default configuration of th
 ## Configuration File
 
 ```toml
+// UUID identifying the host
+host_uuid = "c030b40d-0eab-417b-b33a-22d952357984"
+
 // where the events should be written
 output = "/dev/stdout"
 
@@ -30,6 +33,9 @@ max_buffered_events = 1024
 
 // paths to files containing detection/filtering rules
 rules = []
+
+// path to files containing iocs to match against
+iocs = []
 
 [[events]]
 name = "execve"
@@ -54,11 +60,23 @@ name = "exit_group"
 enable = true
 
 [[events]]
+name = "clone"
+enable = true
+
+[[events]]
+name = "prctl"
+enable = true
+
+[[events]]
 name = "init_module"
 enable = true
 
 [[events]]
 name = "bpf_prog_load"
+enable = true
+
+[[events]]
+name = "bpf_socket_filter"
 enable = true
 
 [[events]]
@@ -82,12 +100,8 @@ name = "send_data"
 enable = true
 
 [[events]]
-name = "mount"
-enable = true
-
-[[events]]
-// disabled by default as it generates a large amount of events
 name = "read"
+// disabled by default as it generates a large amount of events
 enable = false
 
 [[events]]
