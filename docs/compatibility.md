@@ -49,3 +49,35 @@ Please let us know if you tested kunai with success on an OS/kernel not listed a
 :::tip I tested kunai with success on an OS/kernel not listed above
 Let us know so that we can update the table
 :::
+
+## Known issues
+
+### RLIMIT_MEMLOCK
+
+Sometimes (mostly happening on old kernels) **Kunai** may fail at loading with the following
+message (or something very similar).
+
+```
+[2024-04-11T13:25:35Z WARN  aya::maps] RLIMIT_MEMLOCK value is 8 MiB, not RLIM_INFINITY; if experiencing 
+problems with creating maps, try raising RLIMIT_MEMLOCK either to RLIM_INFINITY or to a higher value 
+sufficient for the size of your maps
+Error: map error: failed to create map `FN_DEPTH` with code -1
+
+Caused by:
+    0: failed to create map `FN_DEPTH` with code -1
+    1: Operation not permitted (os error 1)
+```
+
+You can check the current `RLIMIT_MEMLOCK` with `ulimit -l` and set the limit **temporarily** with
+`ulimit -l unlimited`
+
+You can increase the limit for `root` user permanently in `/etc/security/limits.conf`
+
+```text title="/etc/security/limits.conf"
+# increase root user memlock
+root        hard    memlock        infinity
+root        soft    memlock        infinity
+```
+
+For more information `man limits.conf`
+
