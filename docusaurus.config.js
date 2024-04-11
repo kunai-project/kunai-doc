@@ -50,7 +50,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: editUrl,
-          lastVersion: '0.1.0',
+          lastVersion: 'current',
           versions: {
             current: {
               label: `0.2.0`,
