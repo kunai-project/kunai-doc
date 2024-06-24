@@ -178,7 +178,7 @@ match-on:
         kunai: [ 40 ]
 matches:
     # exe matches regex
-    $browser: .data.exe ~= '/usr/lib/(firefox/firefox|chromium/chromium)'
+    $browser: .data.exe.file ~= '/usr/lib/(firefox/firefox|chromium/chromium)'
 # if exe is neither firefox nor chromium
 condition: not $browser
 ```
