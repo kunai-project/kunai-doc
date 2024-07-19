@@ -130,6 +130,35 @@ enable = true
 Enabling/disabling logs will impact the performance of the tool. If you are looking for advanced log filtering please look at [log filtering documentation](./advanced/rule_configuration)
 :::
 
+### Log rotation
+
+:::info
+log rotation feature is available since `v0.2.5` **only**
+:::
+
+Log rotation is possible by defining a `[output_settings]` section
+in the configuration file. Log rotation **will work if and only if** `output`
+setting **is a file**.
+
+```toml
+host_uuid = "c030b40d-0eab-417b-b33a-22d952357984"
+output = "/var/log/kunai/events.jsonl"
+max_buffered_events = 1024
+rules = []
+iocs = []
+
+// this section has to come after iocs
+[output_settings]
+// we rotate when the current log file reaches 100MB
+rotate_size="100MB"
+// when the total size of logs reaches 10GB we start to
+// delete old files
+max_size="10GB"
+
+// continue here with the rest of the configuration
+[...]
+```
+
 ## Advanced CLI usage
 
 Some of the configuration options can be set directly from CLI.
@@ -170,3 +199,25 @@ Options:
 * CLI options override configuration file options
 * you can used `--include all` or `--exclude all` to respectively include or exclude all events
 :::
+
+### Testing rules / IoC configuration
+
+:::info
+`replay` command is available only since `v0.2.1`
+:::
+
+When to use replay command:
+* You want to test your [**detection/filtering rules**](advanced/rule_configuration.md)
+* You want to test your [**IoC configuration**](advanced/ioc_configuration.md)
+
+```bash
+Usage: kunai replay [LOG_FILES]...
+
+Arguments:
+  [LOG_FILES]...  
+
+Options:
+  -h, --help  Print help
+```
+
+A typical usage of the replay command would be: `./kunai -i iocs.json -r rules.yaml replay /path/to/kunai/logs.jsonl`
