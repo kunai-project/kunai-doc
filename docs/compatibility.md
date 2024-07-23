@@ -38,11 +38,9 @@ In order to get your kernel version, run the following command `uname -r`, then 
 :::tip My kernel is not in the table !
 
 If your kernel version:
-* is between the minimum and maximum kernel version, there are chances it will work without issue
+* is between the minimum and maximum kernel version, it will **very likely** work without issue
 * is higher than the maximum version supported, cross your fingers, it might work
-* is lower than the minimum version, it is likely it will fail at running but try anyway you have nothing to lose
-
-Please let us know if you tested kunai with success on an OS/kernel not listed above.
+* is lower than the minimum version, it is will likely fail at running but try anyway you have nothing to lose
 
 :::
 
