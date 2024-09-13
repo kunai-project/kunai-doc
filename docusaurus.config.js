@@ -44,16 +44,15 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          //includeCurrentVersion: isDev,
           includeCurrentVersion: true,
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: editUrl,
-          lastVersion: 'current',
+          lastVersion: '0.2.0',
           versions: {
             current: {
-              label: `0.2.0`,
+              label: `Unstable`,
             },
           },
         },
