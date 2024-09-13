@@ -210,7 +210,7 @@ When to use replay command:
 * You want to test your [**detection/filtering rules**](advanced/rule_configuration.md)
 * You want to test your [**IoC configuration**](advanced/ioc_configuration.md)
 
-```bash
+```
 Usage: kunai replay [LOG_FILES]...
 
 Arguments:
