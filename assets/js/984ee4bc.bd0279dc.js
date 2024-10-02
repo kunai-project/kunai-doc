@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkunai_doc=self.webpackChunkkunai_doc||[]).push([[6677],{8782:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/sandbox","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
