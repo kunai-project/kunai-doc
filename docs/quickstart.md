@@ -17,4 +17,4 @@ sudo kunai
 Kunai needs to load eBPF programs into the kernel so it requires elevated privileges
 :::
 
-You can try to make some activity on your host and see if kunai catches it properly. In order to understand the events generated please refer to [events documentation](category/kunai---events).
+You can try to make some activity on your host and see if kunai catches it properly. In order to understand the events generated please refer to [events documentation](events/).
