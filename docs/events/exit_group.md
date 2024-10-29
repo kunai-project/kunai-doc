@@ -9,10 +9,10 @@ Event generated when a thread-group (process and all its threads) exits.
 ```json
 {
   "data": {
-    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/zsh",
-    "command_line": "git rev-parse --show-toplevel",
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/zsh|/usr/bin/zsh|/usr/bin/zsh",
+    "command_line": "tail -n1",
     "exe": {
-      "file": "/usr/bin/git"
+      "path": "/usr/bin/tail"
     },
     "error_code": 0
   },
@@ -22,13 +22,14 @@ Event generated when a thread-group (process and all its threads) exits.
       "source": "kunai",
       "id": 5,
       "name": "exit_group",
-      "uuid": "80f4dc9f-9114-eff1-3686-7785f7472a1f",
-      "batch": 85
+      "uuid": "649bc187-7d2e-495a-254f-ef2b12968e3f",
+      "batch": 121
     },
     "task": "...",
     "parent_task": "...",
-    "utc_time": "2024-02-12T21:58:25.540539123Z"
+    "utc_time": "2024-10-29T12:47:50.954498024Z"
   }
 }
 ```
+
 

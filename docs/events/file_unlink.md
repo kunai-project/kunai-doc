@@ -10,11 +10,11 @@ Event generated when a file gets unlinked
 {
   "data": {
     "ancestors": "/usr/lib/systemd/systemd|/usr/bin/udevadm",
-    "command_line": "(udev-worker)",
+    "command_line": "/usr/lib/systemd/systemd-udevd",
     "exe": {
-      "file": "/usr/bin/udevadm"
+      "path": "/usr/bin/udevadm"
     },
-    "path": "/run/udev/watch/557",
+    "path": "/run/udev/watch/b43:128",
     "success": true
   },
   "info": {
@@ -23,12 +23,12 @@ Event generated when a file gets unlinked
       "source": "kunai",
       "id": 86,
       "name": "file_unlink",
-      "uuid": "d4927cf9-28c1-5c82-ea79-d3f235d2843f",
-      "batch": 28
+      "uuid": "66d58529-0b24-ef1d-2b27-3e5a5a85d31b",
+      "batch": 643
     },
     "task": "...",
     "parent_task": "...",
-    "utc_time": "2024-02-12T21:58:17.433963633Z"
+    "utc_time": "2024-10-29T12:47:59.189301629Z"
   }
 }
-``
+```

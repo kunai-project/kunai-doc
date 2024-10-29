@@ -18,14 +18,14 @@ the context.
 ```json
 {
   "data": {
-    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/udevadm",
-    "command_line": "(udev-worker)",
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/bash",
+    "command_line": "sudo rm /etc/kunai_test.conf",
     "exe": {
-      "file": "/usr/bin/udevadm"
+      "path": "/usr/bin/sudo"
     },
-    "option": "PR_SET_NAME",
-    "arg2": "0x60c410102419",
-    "arg3": "0x60c410102419",
+    "option": "PR_CAP_AMBIENT",
+    "arg2": "0x1",
+    "arg3": "0x0",
     "arg4": "0x0",
     "arg5": "0x0",
     "success": true
@@ -36,12 +36,12 @@ the context.
       "source": "kunai",
       "id": 7,
       "name": "prctl",
-      "uuid": "d851a1d4-4edc-fcda-e4e0-a96a9fecc2ef",
-      "batch": 32
+      "uuid": "f87e9b31-8686-6d7d-f3fb-7dd98d21caee",
+      "batch": 878
     },
     "task": "...",
     "parent_task": "...",
-    "utc_time": "2024-02-13T08:34:29.318028196Z"
+    "utc_time": "2024-10-29T12:48:02.475355358Z"
   }
 }
 ```

@@ -1,6 +1,6 @@
 ---
 title: Threat Detection Usage
-sidebar_position: 3
+sidebar_position: 5
 ---
 
 Configure **Kunai** for threat detection usage.

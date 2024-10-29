@@ -13,16 +13,17 @@ This event gets generated only when `execve` syscall is successful
 ```json
 {
   "data": {
-    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/zsh",
-    "parent_exe": "/usr/bin/zsh",
-    "command_line": "git rev-parse --quiet --verify HEAD",
+    "ancestors": "kernel|kernel",
+    "parent_exe": "kernel",
+    "command_line": "/sbin/modprobe -q -- net-pf-10",
     "exe": {
-      "file": "/usr/bin/git",
-      "md5": "7df180fdcbd91f2d5e119ad4eca85d38",
-      "sha1": "a90827d841b5a33703227764e2f62a487cc9cbf3",
-      "sha256": "30eccaee4cda7ed541c143bf73c3fd1266a8a17302dc362da487be72f5ac3500",
-      "sha512": "dde3c20e7974234ecee33759574706ef5644d12b363a29d090984d1ce09ca246e27c8e7496d67c035d6817f8a3c2665cffbff26904bd9283cf5abb08ff888dff",
-      "size": 4180608
+      "path": "/usr/bin/kmod",
+      "md5": "08220eec2f1a1f3690a2d6b2a634d255",
+      "sha1": "4dd4f7a269c9d18d755176bcf44bcef86abe2633",
+      "sha256": "cc064683b03c958347f2a7d13ee9d4523434674e2599c2ca710f923dc44b0a5b",
+      "sha512": "87d3057d6881b5256bf1ae93386d9b615f1afe11c3c90ae2e71eb68d9cf4f550205135ffd5cf24ca6fa72e08edf56110bd70a9ca5c5448283b5939384ff64813",
+      "size": 166080,
+      "error": null
     }
   },
   "info": {
@@ -31,13 +32,12 @@ This event gets generated only when `execve` syscall is successful
       "source": "kunai",
       "id": 1,
       "name": "execve",
-      "uuid": "88780e39-3308-e9a9-3f23-5c69475b3ccf",
-      "batch": 294
+      "uuid": "e97b8ca5-f6bd-c206-afbd-701c0d61a9d9",
+      "batch": 605
     },
     "task": "...",
     "parent_task": "...",
-    "utc_time": "2024-02-13T08:35:12.881471231Z"
+    "utc_time": "2024-10-29T12:47:58.834535124Z"
   }
 }
 ```
-

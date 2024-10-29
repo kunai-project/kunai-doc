@@ -14,11 +14,11 @@ For some processes, those using JIT compilers, it is legit to generate a lot of 
 {
   "data": {
     "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/bash",
-    "command_line": "/tmp/tmp.TWXtUrEenk_kunai_test.c.out",
+    "command_line": "/tmp/tmp.UjIedg3IHI_kunai_test.c.out",
     "exe": {
-      "file": "/tmp/tmp.TWXtUrEenk_kunai_test.c.out"
+      "path": "/tmp/tmp.UjIedg3IHI_kunai_test.c.out"
     },
-    "addr": "0x70080321a000",
+    "addr": "0x776a2f572000",
     "prot": "0x5"
   },
   "info": {
@@ -27,13 +27,14 @@ For some processes, those using JIT compilers, it is legit to generate a lot of 
       "source": "kunai",
       "id": 40,
       "name": "mprotect_exec",
-      "uuid": "0b4824bd-2a3e-15df-1142-4df7f2d718ca",
-      "batch": 67
+      "uuid": "1bc9874b-500c-7c7e-ad64-f14a608cbc58",
+      "batch": 877
     },
     "task": "...",
     "parent_task": "...",
-    "utc_time": "2024-02-12T21:58:23.238859965Z"
+    "utc_time": "2024-10-29T12:48:02.469448415Z"
   }
 }
 ```
+
 

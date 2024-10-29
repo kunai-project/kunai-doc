@@ -8,7 +8,7 @@ sidebar_position: 2
 ### When should I use IoC scanning ?
 
 * When you have lots of **IoCs**
-* When you **do not need** to match **IoCs** against **regex** (use [detection rules](./rule_configuration))
+* When you **do not need** to match **IoCs** against **regex** (otherwise use [detection rules](./rule_configuration))
 
 :::caution
 When **Kunai** is configured to match against **IoCs**, **ONLY** the events matching one or more **IoCs** will be shown.
@@ -44,8 +44,8 @@ Having such a minimal format makes the **IoC** creation trivial from almost any 
 Assuming the following **IoC** configuration file
 
 ```json
-{"uuid": "81050c82-68a5-4130-a56d-a465c8337066", "source":"Example", "value":"why.kunai.rocks"}
-{"uuid": "dd19ecd1-8237-427a-9b1d-35ff7d17381f", "source":"Example", "value":"kunai.rocks"}
+{"uuid": "81050c82-68a5-4130-a56d-a465c8337066", "source":"Example", "value":"why.kunai.rocks", "severity": 4}
+{"uuid": "dd19ecd1-8237-427a-9b1d-35ff7d17381f", "source":"Example", "value":"kunai.rocks", "severity": 2}
 ```
 
 One can configure **Kunai** to take this file either via [configuration file](/docs/configuration#configuration-file) or via [command line flag](/docs/configuration#advanced-cli-usage)
@@ -56,43 +56,41 @@ Letting **Kunai** (configured with this file) run  **does not output any event**
 ```json
 {
   "data": {
-    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3",
-    "command_line": "/usr/lib/firefox/firefox",
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh",
+    "command_line": "curl https://why.kunai.rocks",
     "exe": {
-      "file": "/usr/lib/firefox/firefox"
+      "path": "/usr/bin/curl"
+    },
+    "socket": {
+      "domain": "AF_INET",
+      "type": "SOCK_DGRAM",
+      "proto": "UDP"
+    },
+    "src": {
+      "ip": "10.1.0.196",
+      "port": 55686
     },
     "query": "why.kunai.rocks",
-    "proto": "udp",
-    "response": "0xrawsec.github.io",
+    "response": "kunai-project.github.io",
     "dns_server": {
-      "ip": "10.96.0.1",
+      "ip": "10.7.0.251",
       "port": 53,
       "public": false,
       "is_v6": false
-    }
+    },
+    "community_id": "1:8G5yocM+oWSy5hbv1gXmeon8qVI="
   },
   "detection": {
     "iocs": [
+      "kunai-project.github.io",
       "why.kunai.rocks"
     ],
-    "severity": 10
+    "severity": 6
   },
-  "info": {
-    "host": "...",
-    "event": {
-      "source": "kunai",
-      "id": 61,
-      "name": "dns_query",
-      "uuid": "9afe70fe-b763-8363-8ecc-02e73f990154",
-      "batch": 91
-    },
-    "task": "...",
-    "parent_task": "...",
-    "utc_time": "2024-02-13T12:00:57.596505416Z"
-  }
+  ...
 }
 ```
 
 :::tip severity
-**Maximal** severity score is attributed to any event matching IoCs and this is not configurable.
+**severity** score is stacking up until reaching **maximum severity value** (i.e. 10)
 :::

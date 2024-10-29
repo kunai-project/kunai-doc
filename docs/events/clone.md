@@ -17,10 +17,10 @@ section of this event.
 ```json
 {
   "data": {
-    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt",
-    "command_line": "zsh",
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/udevadm",
+    "command_line": "/usr/lib/systemd/systemd-udevd",
     "exe": {
-      "file": "/usr/bin/zsh"
+      "path": "/usr/bin/udevadm"
     },
     "flags": "0x1200000"
   },
@@ -30,12 +30,12 @@ section of this event.
       "source": "kunai",
       "id": 6,
       "name": "clone",
-      "uuid": "ecccb270-b631-84e6-f23a-5b31696e1792",
-      "batch": 276
+      "uuid": "ccd9e8fa-5684-b753-ce65-5527157b33f7",
+      "batch": 605
     },
     "task": "...",
     "parent_task": "...",
-    "utc_time": "2024-02-13T08:35:10.801423351Z"
+    "utc_time": "2024-10-29T12:47:58.259432812Z"
   }
 }
 ```

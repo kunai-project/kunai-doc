@@ -18,12 +18,12 @@ If you decide to enable these events (disabled by default), you must be aware th
 ```json
 {
   "data": {
-    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/zsh",
-    "command_line": "git diff --no-ext-diff --ignore-submodules=dirty --quiet --exit-code",
+    "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/bash",
+    "command_line": "sudo docker run -it --rm -h ubuntu-kunai-test ubuntu:latest ls -hail",
     "exe": {
-      "file": "/usr/bin/git"
+      "path": "/usr/bin/sudo"
     },
-    "path": "/usr/lib/libz.so.1.3.1"
+    "path": "/run/sudo/ts/1000"
   },
   "info": {
     "host": "...",
@@ -31,12 +31,13 @@ If you decide to enable these events (disabled by default), you must be aware th
       "source": "kunai",
       "id": 81,
       "name": "read",
-      "uuid": "902d47f1-dd0b-0313-582b-2083ba0fee1c",
-      "batch": 65
+      "uuid": "f7f6ce71-325a-9708-4363-97c413bffa28",
+      "batch": 604
     },
     "task": "...",
     "parent_task": "...",
-    "utc_time": "2024-02-12T21:58:22.097038200Z"
+    "utc_time": "2024-10-29T12:47:57.957950584Z"
   }
 }
 ```
+

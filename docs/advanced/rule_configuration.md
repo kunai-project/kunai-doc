@@ -7,10 +7,12 @@ Using **Kunai** to monitor every single event happening on a system is nice as i
 
 :::caution
 When **Kunai** is configured with some detection/filtering rules, **ONLY** the events matching at least one rule will be shown.
+
+If an event is **not desired** prefer [**disabling it in configuration**](../configuration#configuration-file) rather than **filtering it out**, it will **save resources**.
 :::
 
 :::info
-I intentionally do not go too deep into the rule format as it will be part of a dedicated documentation in the [gene-rs project](https://github.com/0xrawsec/gene-rs)
+We intentionally do not go too deep into the rule format as it will be part of a dedicated documentation in the [gene-rs project](https://github.com/0xrawsec/gene-rs)
 :::
 
 ## Detection Rules
@@ -36,21 +38,22 @@ meta:
     # MITRE ATT&CK ids
     attack: [ T1036 ]
     # authors of the rule
-    authors: [ 0xrawsec ]
+    authors: [ qjerome ]
     # comments about the rule
     comments:
         - tries to catch binaries masquerading kernel threads
 # acts as a pre-filter to speed up engine
 match-on:
     events:
-        # we match on kunai execve and execve_script event ids
-        kunai: [1, 2]
+        # we match on kunai execve and execve_script events
+        kunai: [execve, execve_script]
 matches:
     # 0x200000 is the flag for KTHREAD
     $task_is_kthread: .info.task.flags &= '0x200000'
     # common kthread names 
     $kthread_names: .info.task.name ~= '^(kworker)'
-# if task is NOT a KTHREAD but we have a name that looks like one
+# if task is NOT a KTHREAD but we have a name that 
+# looks like one we want the rule to kick-in
 condition: not $task_is_kthread and $kthread_names
 # severity is bounded to 10 so it is the maximum score
 severity: 10
@@ -75,7 +78,7 @@ If you have made the experiment, you may have noted that when the rule matches t
     "parent_exe": "/usr/bin/zsh",
     "command_line": "/tmp/kworker",
     "exe": {
-      "file": "/tmp/kworker",
+      "path": "/tmp/kworker",
       "md5": "5a657abb15a5c469936ec86f420f7b39",
       "sha1": "5d08746413e0e5f3242fe768266e39796007ca2d",
       "sha256": "b97ab6fabafba27199d50a190a2ad6513ccf8ee722558e86d2a45fd2ac535c67",
@@ -174,11 +177,11 @@ params:
     filter: true
 match-on:
     events:
-        # kunai mprotect_exec event id
-        kunai: [ 40 ]
+        # applies on kunai mprotect_exec
+        kunai: [ mprotect_exec ]
 matches:
     # exe matches regex
-    $browser: .data.exe.file ~= '/usr/lib/(firefox/firefox|chromium/chromium)'
+    $browser: .data.exe.path ~= '/usr/lib/(firefox/firefox|chromium/chromium)'
 # if exe is neither firefox nor chromium
 condition: not $browser
 ```
@@ -187,6 +190,143 @@ condition: not $browser
 * Adapt the `$browser` match if needed
 * You can try to reverse the condition (remove `not`) and see the difference
 :::
+
+:::caution
+In case several **filtering rules** are specified, it is a **OR** relationship between them. This means, if a rule is supposed to **exclude** an event but another **includes** it, the event will be shown. So for **filtering rules** it is a good practice to create **one rule** per **event type** we want to **include**.
+:::
+
+### Realistic Example
+
+Let's create a **filtering configuration** that logs **everything** except some noisy events.
+
+```yaml
+name: include.all.but.noisy
+params:
+  filter: true
+match-on:
+  events:
+      # we can put - in front of the events we don't want this rule
+      # to apply on. The following means, everything except 
+      # mprotect_exec and prctl
+      kunai: [ '-mprotect_exec', '-prctl' ]
+# no condition means alwait returns true
+
+---
+
+# Rules have OR relationship between them so here after we keep
+# ONLY some specific mprotect_exec we want to see, all others
+# being excluded by the rule above
+name: log.mprotect_exec
+params:
+    # flag to set so that the rule is used as a filter
+    filter: true
+match-on:
+    events:
+        # applies on kunai mprotect_exec
+        kunai: [ mprotect_exec ]
+matches:
+    # exe matches regex
+    $browser: .data.exe.path ~= '/usr/lib/(firefox/firefox|chromium/chromium)'
+# if exe is neither firefox nor chromium
+condition: not $browser
+```
+
+## Taking Actions on Events
+
+It is possible to tell **Kunai** to take **actions** on some events. Actions can be defined both in **filtering** and **detection** rules. The only difference is that some actions are not supported for **filtering** rules. For example it is not allowed to use a **kill** action within a **filtering** rule.
+
+To list the available **actions** as well as their **description**, run:
+
+```bash
+kunai config --list-actions
+```
+
+### Example: Kill a Process
+
+```yaml
+# this is a condensed version of the rule defined previously
+# killing the process instead of letting it run
+name: mimic.kthread
+match-on:
+    events:
+        kunai: [execve, execve_script]
+matches:
+    $task_is_kthread: .info.task.flags &= '0x200000'
+    $kthread_names: .info.task.name ~= '^(kworker)'
+condition: not $task_is_kthread and $kthread_names
+severity: 10
+actions: [ kill ]
+```
+
+1. dump the rule in a file `rule.yaml`
+1. run kunai with `kunai run -r rule.yaml`
+1. open another terminal and trigger the rule by executing `cp /usr/bin/ls /tmp/kworker && /tmp/kworker -R /`
+1. **observe** the following:
+    * a kunai event is generated as it comes from a detection
+    * a **warning log** is printed showing a process got killed
+    * our **fake malicious** process has been **killed**
+
+:::danger
+Use `kill` action **with extreme care**! Kunai runs with high privileges and can kill 
+any process. 
+
+Use it only if you are sure there is no false positives to
+the detection rule.
+:::
+
+### Example: Scan Files
+
+Similarly one can decide to **scan files** with  **on-demand**. There are two possibilities currently supported for file scanning:
+1. **Kunai** has been [configured](../configuration.md) to load [Yara](https://virustotal.github.io/yara-x/) rules
+    * a [`file_scan`](../events/file_scan) event will be generated with `.data.signatures` containing any **Yara signature** match and `.data.positives` indicating the **number of matching rules**
+1. **Kunai** has **not** been configured to load **Yara** rules
+    * in such case a [`file_scan`](../events/file_scan) event will be generated but `.data.signature` field will always be **empty** and `.data.positives` will always be `0`.
+
+:::tip
+When a **file scan** is issued **any path** contained in the event is scanned. So in most of the cases it will result in several [`file_scan`](../events/file_scan) events being generated.
+:::
+
+```yaml
+# this rule scans any bash script written on disk
+name: scan.any.bash.script.write
+params:
+  filter: true
+match-on:
+    events:
+        kunai: [ write_and_close ]
+matches:
+    $bash_ext: .data.path ~= '\.sh$'
+condition: all of them
+actions: [ scan-files ]
+
+---
+
+name: show.file_scan
+params: true
+match-on:
+  events:
+    kunai: [ file_scan ] 
+```
+
+To test the above rule:
+1. write the above rule in a file `/tmp/scan.yaml`
+2. Run kunai with `write_and_close` events **enabled** and load the rule file
+```bash
+kunai run --include write_and_close -r /tmp/scan.yaml
+```
+3. Drop a `bash` script somewhere and execute it
+```bash
+echo "ls -hail" > /tmp/test.sh && chmod +x /tmp/test.sh && /tmp/test.sh
+```
+4. observe that **two** [`file_scan`](../events/file_scan) events got printed
+
+:::caution
+To scan **dropped files** you must use [`write_and_close`](../events/write_and_close) events as those
+indicate the file **has been closed** and de-facto cannot be written again
+until it gets open again.
+:::
+
+
 
 ## Memo about **Kunai** Rules
 
@@ -197,8 +337,8 @@ condition: not $browser
 1. a rule can either be a **detection** or a **filtering** rule
     * filtering rules output event **as is**
     * detection rules output event with **detection information** in `.detection` section
-1. `match-on` section is very important as it allows to quickly filter events
-1. every `match` in `matches` must be in the form `$OPERAND: FIELD_PATH OPERATOR 'VALUE'`
+1. `match-on` section is **very important** as it allows to quickly filter events
+1. every `match` in `matches` must be in the form `$VAR_NAME: FIELD_PATH OPERATOR 'VALUE'`
     * `FIELD_PATH`: **field's absolute path** starting with `.`, separated by `.`
     * `OPERATOR`: 
         * `==` : **equality operator**
@@ -206,6 +346,14 @@ condition: not $browser
         * `&=` : **flag checking operator** &rarr; `VALUE` must be a **number**
         * `~=` : **regex operator** &rarr; `VALUE` must be a **string** regex following [syntax](https://docs.rs/regex/latest/regex/#syntax)
     * every **field value** found at `FIELD_PATH` is expected to be of the same type than `VALUE`
-1. `condition` supports `not`, `and` and `or` keywords
+1. `condition` defines the **logic** to apply on the **matches**:
+    * `not`, `and` and `or` keywords
+    * support for **aggregated notation**:
+      * `all of them`: all the variable must be `true`
+      * `all of $VAR_PREFIX`: all variables **starting with VAR_PREFIX** must be `true`
+      * `N of them`: `N` variables must be `true`
+      * `N of $VAR_PREFIX`: `N` variables **starting with VAR_PREFIX** must be `true`
+      * `none of them`: **None** of the variables must be `true` (all `false`)
+      * `none of $VAR_PREFIX`: **None** of the variables **starting with VAR_PREFIX** must be `true` 
 
 

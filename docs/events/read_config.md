@@ -10,9 +10,9 @@ This file is generated whenever a file located in `/etc` is being **read**.
 {
   "data": {
     "ancestors": "/usr/lib/systemd/systemd|/usr/bin/login|/usr/bin/zsh|/usr/bin/bash|/usr/bin/xinit|/usr/bin/i3|/usr/bin/bash|/usr/bin/urxvt|/usr/bin/zsh|/usr/bin/bash",
-    "command_line": "sudo rmmod nbd",
+    "command_line": "sudo rm /etc/kunai_test.conf",
     "exe": {
-      "file": "/usr/bin/sudo"
+      "path": "/usr/bin/sudo"
     },
     "path": "/etc/passwd"
   },
@@ -22,12 +22,12 @@ This file is generated whenever a file located in `/etc` is being **read**.
       "source": "kunai",
       "id": 82,
       "name": "read_config",
-      "uuid": "0307b677-3bbb-41e2-5760-f88cc2c8332f",
-      "batch": 24
+      "uuid": "16aa78c6-efb5-6276-b24d-911a1c5d7f32",
+      "batch": 878
     },
     "task": "...",
     "parent_task": "...",
-    "utc_time": "2024-02-12T21:58:16.952790421Z"
+    "utc_time": "2024-10-29T12:48:02.475065013Z"
   }
 }
 ```

@@ -1,13 +1,13 @@
 ---
-sidebar_position: 83
+sidebar_position: 87
 ---
 
-# Write
+# Write and close
 
-This event gets generated whenever a file is write.
+An event generated when a file that has been **written** is just being **closed**. This is a great hook event to trigger a **file scan** as the file is not supposed to be **written** again.
 
-:::info
-If consecutive `write` operations are made on the same file, only one event will be generated for a given task.
+:::caution
+This event is different from [`write`](../events/write) event. `write` event gets generated only once per file and **as soon as** the file receive its first **write** operation.
 :::
 
 :::danger
@@ -28,15 +28,14 @@ If you decide to enable these events (disabled by default), you must be aware th
     "host": "...",
     "event": {
       "source": "kunai",
-      "id": 83,
-      "name": "write",
-      "uuid": "c9fb9d68-073c-7fd4-8e9f-b2b38e3b2d32",
+      "id": 87,
+      "name": "write_and_close",
+      "uuid": "1346aa39-8ebd-5cd6-966e-f8ff9cd91fdd",
       "batch": 606
     },
     "task": "...",
     "parent_task": "...",
-    "utc_time": "2024-10-29T12:47:58.845139221Z"
+    "utc_time": "2024-10-29T12:47:58.845148406Z"
   }
 }
 ```
-
