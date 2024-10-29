@@ -209,7 +209,7 @@ match-on:
       # to apply on. The following means, everything except 
       # mprotect_exec and prctl
       kunai: [ '-mprotect_exec', '-prctl' ]
-# no condition means alwait returns true
+# rule with no condition always returns true
 
 ---
 
@@ -231,7 +231,7 @@ matches:
 condition: not $browser
 ```
 
-## Taking Actions on Events
+## Trigger Actions on Events
 
 It is possible to tell **Kunai** to take **actions** on some events. Actions can be defined both in **filtering** and **detection** rules. The only difference is that some actions are not supported for **filtering** rules. For example it is not allowed to use a **kill** action within a **filtering** rule.
 
@@ -323,7 +323,7 @@ echo "ls -hail" > /tmp/test.sh && chmod +x /tmp/test.sh && /tmp/test.sh
 :::caution
 To scan **dropped files** you must use [`write_and_close`](../events/write_and_close) events as those
 indicate the file **has been closed** and de-facto cannot be written again
-until it gets open again.
+until it gets re-opened.
 :::
 
 

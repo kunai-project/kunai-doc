@@ -7,11 +7,11 @@ sidebar_position: 87
 An event generated when a file that has been **written** is just being **closed**. This is a great hook event to trigger a **file scan** as the file is not supposed to be **written** again.
 
 :::caution
-This event is different from [`write`](../events/write) event. `write` event gets generated only once per file and **as soon as** the file receive its first **write** operation.
+This event is different from [`write`](../events/write) event. `write` events gets generated **only once per couple (task, file)** and **as soon as** the file receive its first **write** operation.
 :::
 
 :::danger
-If you decide to enable these events (disabled by default), you must be aware that they are going to be a lot. Please make sure you have read the [configuration section](../configuration.md).
+If you decide to enable these events (disabled by default), please be aware that there will be a large number of them. Make sure you have read the [configuration section](../configuration.md).
 :::
 
 ```json

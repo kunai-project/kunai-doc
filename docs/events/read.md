@@ -12,7 +12,7 @@ This event gets generated whenever a file is read.
 :::
 
 :::danger
-If you decide to enable these events (disabled by default), you must be aware that they are going to be a lot. Please make sure you have read the [configuration section](../configuration.md).
+If you decide to enable these events (disabled by default), please be aware that there will be a large number of them. Make sure you have read the [configuration section](../configuration.md).
 :::
 
 ```json

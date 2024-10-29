@@ -42,7 +42,7 @@ output: /dev/stdout
 
 # this is the maximum number of events that can be stored in the 
 # buffer used by the eBPF probes. This limit might need to be increased
-# if events get lost (very likely due to a high troughput).
+# if events get lost (very likely due to a high throughput).
 # NB: increasing this limit also increase the memory used by kunai
 max_buffered_events: 1024
 
