@@ -74,12 +74,10 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/kunai-social-card.jpg',
-      /*
       announcementBar: {
         id: 'announcementBar-1', // Increment on change
-        content: `⭐️ If you like Kunai, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/0xrawsec/kunai">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/0xrawsec">Twitter</a>`,
+        content: `⭐️ If you like Kunai, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/kunai-project/kunai">GitHub</a> and follow us on social medias`,
       },
-      */
       navbar: {
         title: 'Kunai',
         logo: {
@@ -135,6 +133,10 @@ const config = {
               {
                 label: 'Mastodon',
                 href: 'https://infosec.exchange/@kunai_project',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/kunai-project',
               },
               {
                 label: 'X/Twitter',
