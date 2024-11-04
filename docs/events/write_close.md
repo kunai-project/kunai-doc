@@ -29,7 +29,7 @@ If you decide to enable these events (disabled by default), please be aware that
     "event": {
       "source": "kunai",
       "id": 87,
-      "name": "write_and_close",
+      "name": "write_close",
       "uuid": "1346aa39-8ebd-5cd6-966e-f8ff9cd91fdd",
       "batch": 606
     },

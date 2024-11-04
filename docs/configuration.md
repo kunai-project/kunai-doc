@@ -125,7 +125,7 @@ events:
     enable: true
   file_unlink:
     enable: true
-  write_and_close:
+  write_close:
     enable: false
   file_scan:
     enable: true

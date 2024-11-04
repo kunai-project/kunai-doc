@@ -293,7 +293,7 @@ params:
   filter: true
 match-on:
     events:
-        kunai: [ write_and_close ]
+        kunai: [ write_close ]
 matches:
     $bash_ext: .data.path ~= '\.sh$'
 condition: all of them
@@ -310,9 +310,9 @@ match-on:
 
 To test the above rule:
 1. write the above rule in a file `/tmp/scan.yaml`
-2. Run kunai with `write_and_close` events **enabled** and load the rule file
+2. Run kunai with `write_close` events **enabled** and load the rule file
 ```bash
-kunai run --include write_and_close -r /tmp/scan.yaml
+kunai run --include write_close -r /tmp/scan.yaml
 ```
 3. Drop a `bash` script somewhere and execute it
 ```bash
@@ -321,7 +321,7 @@ echo "ls -hail" > /tmp/test.sh && chmod +x /tmp/test.sh && /tmp/test.sh
 4. observe that **two** [`file_scan`](../events/file_scan) events got printed
 
 :::caution
-To scan **dropped files** you must use [`write_and_close`](../events/write_and_close) events as those
+To scan **dropped files** you must use [`write_close`](../events/write_close) events as those
 indicate the file **has been closed** and de-facto cannot be written again
 until it gets re-opened.
 :::
