@@ -276,11 +276,11 @@ the detection rule.
 
 ### Example: Scan Files
 
-Similarly one can decide to **scan files** with  **on-demand**. There are two possibilities currently supported for file scanning:
+Similarly one can decide to **scan files on-demand**. There are two possibilities currently supported for file scanning:
 1. **Kunai** has been [configured](../configuration.md) to load [Yara](https://virustotal.github.io/yara-x/) rules
     * a [`file_scan`](../events/file_scan) event will be generated with `.data.signatures` containing any **Yara signature** match and `.data.positives` indicating the **number of matching rules**
 1. **Kunai** has **not** been configured to load **Yara** rules
-    * in such case a [`file_scan`](../events/file_scan) event will be generated but `.data.signature` field will always be **empty** and `.data.positives` will always be `0`.
+    * in such case a [`file_scan`](../events/file_scan) event will be generated but `.data.signature` field will always be **empty** and `.data.positives` will always be `0`. This options might be interesting if one wants to get **metadata** information of some files without the burden of **Yara** file scanning.
 
 :::tip
 When a **file scan** is issued **any path** contained in the event is scanned. So in most of the cases it will result in several [`file_scan`](../events/file_scan) events being generated.
