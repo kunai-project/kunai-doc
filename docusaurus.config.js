@@ -52,6 +52,7 @@ const config = {
           lastVersion: '0.3.0',
           versions: {
             current: {
+              // utf8 barrier emojis
               label: `🚧 Unstable 🚧`,
             },
           },

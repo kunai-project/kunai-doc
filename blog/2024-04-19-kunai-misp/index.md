@@ -4,7 +4,7 @@
 
 ## Warm up
 
-The first step to do  is to get familiar with the kind of events **Kunai** is able to monitor on your system. So please, take a quick read over the [events documentation](/docs/category/kunai---events), in order to better understand the following steps. Additionally, the reader may want to get familiar with the documentation explaining how to use the tool for [threat detection purposes](/docs/advanced/).
+The first step to do  is to get familiar with the kind of events **Kunai** is able to monitor on your system. So please, take a quick read over the [events documentation](/docs/events), in order to better understand the following steps. Additionally, the reader may want to get familiar with the documentation explaining how to use the tool for [threat detection purposes](/docs/advanced/).
 
 For those not having the time to go through the whole documentation, nothing beats a good example. So below one can find the example of an `execve_script` event generated **for every** script being executed on a system running **Kunai**.
 
