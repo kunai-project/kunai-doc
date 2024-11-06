@@ -27,9 +27,23 @@ By default, `install` command just installs kunai, so **no service** will be ins
 
 ## Systemd Installation
 
-The following command would install `kunai` with all the defaults but
-would also install and enable a **systemd unit**. 
+The following command would install `kunai` with all the defaults but would also install and enable a **systemd unit**. Once the service is up and running it can be managed as any other **systemd** service.
 
 ```bash
 kunai install --systemd --enable-unit
 ```
+
+:::caution SERVICE NAME
+By default the unit is named `00-kunai.service` so that it starts before other services. The default is also to create an **alias** `Alias=kunai.service` to simplify some command lines such as `systemctl status kunai`.
+:::
+
+:::danger hardened installation
+**Kunai service** can be installed in **hardened** mode. It simply runs kunai in **hardened** mode by setting [configuration](configuration#configuration) properly.
+
+**Hardened mode** is a security mechanism preventing **kunai** from being stopped by **malware** so this mode comes with some limitations. 
+
+* any `kill` signal sent to kunai will be **denied**
+* when installed this way, the service is protected and **cannot be stopped** with **systemctl**. If you try it would simply fail.
+* since kunai cannot be stopped, it **cannot be restarted** either. So any configuration change will need a **system reboot** to be taken into account
+* to **stop** kunai one needs to disable the service with **systemctl disable kunai** and **reboot the system**
+:::
