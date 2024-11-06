@@ -2,7 +2,7 @@
 sidebar_position: 21
 ---
 
-# Bpf prog load
+# Bpf Prog Load
 
 This **event** is generated every time a BPF program is loaded into the kernel.
 

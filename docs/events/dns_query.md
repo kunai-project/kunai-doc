@@ -2,7 +2,7 @@
 sidebar_position: 61
 ---
 
-# Dns query
+# Dns Query
 
 This event is generated when the a DNS response is received on the host and gives insight both on the query, the response and the DNS resolver.
 

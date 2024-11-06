@@ -2,7 +2,7 @@
 sidebar_position: 41
 ---
 
-# Mmap exec
+# Mmap Exec
 
 This events is generated whenever the `mmap` syscall is used to map an executable file in memory, with memory execution protection.
 

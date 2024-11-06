@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Execve script
+# Execve Script
 
 This event is generated under the same conditions as [execve event](execve). The only difference is that it provides additional information about the interpreter when the file being executed is a script.
 

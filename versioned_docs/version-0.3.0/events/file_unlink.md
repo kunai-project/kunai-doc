@@ -2,7 +2,7 @@
 sidebar_position: 86
 ---
 
-# File unlink
+# File Unlink
 
 Event generated when a file gets unlinked
 

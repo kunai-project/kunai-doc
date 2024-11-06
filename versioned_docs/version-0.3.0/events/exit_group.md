@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Exit group
+# Exit Group
 
 Event generated when a thread-group (process and all its threads) exits.
 

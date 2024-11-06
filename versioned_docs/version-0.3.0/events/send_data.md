@@ -2,7 +2,7 @@
 sidebar_position: 62
 ---
 
-# Send data
+# Send Data
 
 This events gets generated when data is sent to a remote IP address.
 

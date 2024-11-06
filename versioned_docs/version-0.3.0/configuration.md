@@ -48,7 +48,8 @@ max_buffered_events: 1024
 
 # Optional
 # By default kunai is single-threaded if multi-threading
-# is desired specify the number of worker threads to use
+# is desired specify the number of worker threads to use.
+# Set to 0 to use the maximum number of CPUs
 # workers: null
 
 # Optional
@@ -137,7 +138,7 @@ events:
 If you are looking for advanced log filtering please look at [log filtering documentation](./advanced/rule_configuration).
 :::
 
-### Log rotation
+### Log Rotation
 
 Log rotation is possible using the `output_settings` parameter 
 in the configuration file. 
@@ -159,7 +160,7 @@ Log rotation **will work if and only if** `output`
 parameter **is a file**.
 :::
 
-## Advanced CLI usage
+## Advanced CLI Usage
 
 Some of the configuration options can be set directly from CLI.
 
@@ -186,7 +187,7 @@ Options:
 CLI options **always override** configuration file options
 :::
 
-### Testing rules / IoC configuration
+### Testing Rules / IoC Configuration
 
 When to use replay command:
 * You want to test your [**detection/filtering rules**](advanced/rule_configuration.md)

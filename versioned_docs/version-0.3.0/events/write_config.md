@@ -2,7 +2,7 @@
 sidebar_position: 84
 ---
 
-# Write config
+# Write Config
 
 This file is generated whenever a file located in `/etc` is being **written**.
 

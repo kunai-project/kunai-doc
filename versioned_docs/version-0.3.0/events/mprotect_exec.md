@@ -2,7 +2,7 @@
 sidebar_position: 40
 ---
 
-# Mprotect exec
+# Mprotect Exec
 
 This kind of event is generated when memory protection is turned to **executable**.
 

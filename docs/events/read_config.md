@@ -2,7 +2,7 @@
 sidebar_position: 82
 ---
 
-# Read config
+# Read Config
 
 This file is generated whenever a file located in `/etc` is being **read**.
 

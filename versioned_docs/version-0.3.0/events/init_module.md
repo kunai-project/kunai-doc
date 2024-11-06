@@ -2,7 +2,7 @@
 sidebar_position: 20
 ---
 
-# Init module
+# Init Module
 
 This kind of event is generated when a kernel module is loaded into the kernel.
 

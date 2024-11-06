@@ -2,7 +2,7 @@
 sidebar_position: 87
 ---
 
-# Write and close
+# Write and Close
 
 An event generated when a file that has been **written** is just being **closed**. This is a great hook event to trigger a **file scan** as the file is not supposed to be **written** again.
 

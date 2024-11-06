@@ -2,7 +2,7 @@
 sidebar_position: 85
 ---
 
-# File rename
+# File Rename
 
 This event gets generated whenever a file is being renamed.
 
