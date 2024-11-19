@@ -31,6 +31,8 @@ a typical Linux kernel task name. This is a technique sometimes used by malware 
 ```yaml
 # name of the rule
 name: mimic.kthread
+# default type is detection so the following line is not mandatory
+type: detection
 # metadata information
 meta:
     # tags of the rule
@@ -172,9 +174,8 @@ can be used as a base for a custom configuration to observe unknown `mprotect_ex
 
 ```yaml
 name: log.mprotect_exec
-params:
-    # flag to set so that the rule is used as a filter
-    filter: true
+# type to set to use the rule as a filter
+type: filter
 match-on:
     events:
         # applies on kunai mprotect_exec
@@ -201,8 +202,7 @@ Let's create a **filtering configuration** that logs **everything** except some 
 
 ```yaml
 name: include.all.but.noisy
-params:
-  filter: true
+type: filter
 match-on:
   events:
       # we can put - in front of the events we don't want this rule
@@ -217,9 +217,7 @@ match-on:
 # ONLY some specific mprotect_exec we want to see, all others
 # being excluded by the rule above
 name: log.mprotect_exec
-params:
-    # flag to set so that the rule is used as a filter
-    filter: true
+type: filter
 match-on:
     events:
         # applies on kunai mprotect_exec
@@ -230,6 +228,58 @@ matches:
 # if exe is neither firefox nor chromium
 condition: not $browser
 ```
+
+## Composing Rules
+
+Rules can be composed of other rules to simplify their creation, reduce redundancy, and improve performance:
+
+- **Modularity**:
+  - Define a rule once and reuse it in multiple composite rules.
+  - Fixing a single base rule is easier than updating several duplicates.
+  
+- **Simplicity**:
+  - Splitting complex logic into smaller, reusable rules makes them easier to understand and maintain.
+  
+- **Performance**:
+  - A rule can only match an event once, making it more efficient than duplicating frequent matches across multiple rules.
+
+Rules used in others can be of type [`detection`](#detection-rules), [`filter`](#filtering-rules), or `dependency`.
+
+A `dependency` rule has the following properties:  
+1. It must be **loaded** prior to the rules using it.
+1. It **matches** only when referenced in another rule.  
+1. Its `tags`, `severity`, and `actions` sections are ignored and do not affect scan results.
+
+### Example
+
+```yaml
+# we define here a dependency rule
+name: dep.run.tmpfs
+# rule type to make the rule a dependency
+type: dependency
+matches:
+    $a: .data.ancestors ~= '\|(/tmp/|/dev/shm/|/run/|/var/(run|lock)/)\|?'
+    $p: .data.exe.path ~= '^(/tmp/|/dev/shm/|/run/|/var/(run|lock)/)'
+# $a is the slowest so run last
+condition: $p or $a
+
+--- 
+
+# we define a detection rule
+name: run.tmpfs
+meta:
+    tags: [ 'os:linux' ]
+    attack: [ T1027.011 ]
+    authors: [ qjerome ]
+    comments:
+        - if something is running in tmpfs it is suspicious and we should stack up
+matches:
+    # we use the dependency we just defined above
+    $t: rule(dep.run.tmpfs) 
+condition: $t
+severity: 2
+```
+
 
 ## Trigger Actions on Events
 
@@ -289,8 +339,7 @@ When a **file scan** is issued **any path** contained in the event is scanned. S
 ```yaml
 # this rule scans any bash script written on disk
 name: scan.any.bash.script.write
-params:
-  filter: true
+type: filter
 match-on:
     events:
         kunai: [ write_close ]
@@ -302,10 +351,10 @@ actions: [ scan-files ]
 ---
 
 name: show.file_scan
-params: true
 match-on:
   events:
     kunai: [ file_scan ] 
+
 ```
 
 To test the above rule:
@@ -325,8 +374,6 @@ To scan **dropped files** you must use [`write_close`](../events/write_close) ev
 indicate the file **has been closed** and de-facto cannot be written again
 until it gets re-opened.
 :::
-
-
 
 ## Memo about **Kunai** Rules
 
