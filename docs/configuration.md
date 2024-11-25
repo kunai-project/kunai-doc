@@ -29,61 +29,71 @@ Using `config --dump` option gives you a view on the default configuration of th
 ## Configuration File
 
 ```yaml
-# UUID identifying the host. This is auto-generated and should
-# not be changed.
+# UUID identifying the host. This is auto-generated and should not be changed.
 host_uuid: c030b40d-0eab-417b-b33a-22d952357984
 
-# where the events should be written
-output: /dev/stdout
-
-# Optional
-# specify advanced parameters regarding output
-# output_setting: null
-
-# this is the maximum number of events that can be stored in the 
-# buffer used by the eBPF probes. This limit might need to be increased
-# if events get lost (very likely due to a high throughput).
-# NB: increasing this limit also increase the memory used by kunai
+# This is the maximum number of events that can be stored in the buffer used by the eBPF probes.
+# This limit might need to be increased if events get lost (likely due to high throughput).
+# NB: increasing this limit also increases the memory used by Kunai.
 max_buffered_events: 1024
 
-# Optional
-# By default kunai is single-threaded if multi-threading
-# is desired specify the number of worker threads to use.
-# Set to 0 to use the maximum number of CPUs
-# workers: null
+# Optional: specify the number of worker threads to use for multi-threading.
+# Set to 0 to use the maximum number of CPUs.
+# By default, Kunai is single-threaded.
+workers: null
 
-# Optional
-# Specify the minimum length of data to trigger a send_data
-# event.
-# send_data_min_len: null
+# Optional: specify the minimum length of data to trigger a send_data event.
+send_data_min_len: null
 
-# Put here the path to files or directories containing 
-# kunai detection/filtering rules to load in the engine. 
-# Supported file extensions: kun, kunai, gen, gene
-rules: []
-
-# Path to files or directories containing IoCs to be loaded
-# Supported file extensions: ioc
-iocs: []
-
-# Path to files or directories containing Yara rules
-# Supported file extensions: yar, yara
-yara: []
-
-# file_scan event behaves exactly as any other kunai event
-# meaning that to be display it may need to be filter in
-# by a filtering rule. This setting makes sure every positive
-# Yara file scan will be displayed.
-always_show_positive_scans: true
-
-# Whether to run kunai in hardened mode
-# This mode protects kunai process from being tampered with
-# This setting requires bpf to be in the list of lsm kernel
-# boot parameter. Verify it by checking /sys/kernel/security/lsm
+# Whether to run Kunai in hardened mode.
+# This mode protects the Kunai process from being tampered with.
+# Requires 'bpf' to be in the list of LSM kernel boot parameters. 
+# Verify by checking /sys/kernel/security/lsm.
 harden: false
 
-# Events to enable / disable
+# Output configuration
+output:
+  # Where the events should be written.
+  path: /dev/stdout
+
+  # Optional: specify a file rotation size limit (in bytes).
+  rotate_size: null
+  # Example: we rotate when the current log file reaches 10MB
+  # rotate_size: 10MB
+
+  # Optional: specify the maximum output file size (in bytes).
+  max_size: null
+  # Example: when the total size of logs reaches 1GB we start to
+  # delete old files
+  # max_size: 1GB
+
+  # Whether the output is buffered. If set to true some delay
+  # might be observed between event and the time it is written
+  # to the output file.
+  buffered: false
+
+# Scanner configuration
+scanner:
+  # Path to files or directories containing Kunai detection/filtering rules to load in the engine.
+  # Supported file extensions: kun, kunai, gen, gene.
+  rules: []
+
+  # Path to files or directories containing IoCs to be loaded.
+  # Supported file extensions: ioc.
+  iocs: []
+
+  # Path to files or directories containing YARA rules.
+  # Supported file extensions: yar, yara.
+  yara: []
+
+  # Display events greater or equal to min_severity
+  min_severity: 0
+
+  # Ensure every positive YARA file scan will be displayed.
+  show_positive_file_scan: true
+
 events:
+  # Enable or disable specific events.
   execve:
     enable: true
   execve_script:
@@ -97,6 +107,8 @@ events:
   prctl:
     enable: true
   kill:
+    enable: true
+  ptrace:
     enable: true
   init_module:
     enable: true
@@ -137,23 +149,6 @@ events:
 
 If you are looking for advanced log filtering please look at [log filtering documentation](./advanced/rule_configuration).
 :::
-
-### Log Rotation
-
-Log rotation is possible using the `output_settings` parameter 
-in the configuration file. 
-
-```yaml
-host_uuid: d59a13ed-30c8-5ff6-a93f-509de2b09ae7
-output: /var/log/kunai/events.log
-output_settings:
-  # we rotate when the current log file reaches 10MB
-  rotate_size: 10MB
-  # when the total size of logs reaches 1GB we start to
-  # delete old files
-  max_size: 1GB
-# other config parameters ...
-```
 
 :::warning
 Log rotation **will work if and only if** `output`
