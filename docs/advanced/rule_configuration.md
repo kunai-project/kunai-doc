@@ -229,7 +229,7 @@ matches:
 condition: not $browser
 ```
 
-## Composing Rules
+## Rule Composition
 
 Rules can be composed of other rules to simplify their creation, reduce redundancy, and improve performance:
 
@@ -243,7 +243,7 @@ Rules can be composed of other rules to simplify their creation, reduce redundan
 - **Performance**:
   - A rule can only match an event once, making it more efficient than duplicating frequent matches across multiple rules.
 
-Rules used in others can be of type [`detection`](#detection-rules), [`filter`](#filtering-rules), or `dependency`.
+Rules used in others can be of **type** [`detection`](#detection-rules), [`filter`](#filtering-rules), or `dependency`.
 
 A `dependency` rule has the following properties:  
 1. It must be **loaded** prior to the rules using it.
@@ -254,6 +254,8 @@ A `dependency` rule has the following properties:
 
 ```yaml
 # we define here a dependency rule
+# NB: if this rule is used in several others it will
+# be evaluated only once per event scanned.
 name: dep.run.tmpfs
 # rule type to make the rule a dependency
 type: dependency
@@ -381,9 +383,10 @@ until it gets re-opened.
 1. several rules can be defined in a single file (see [YAML documents](https://yaml.org/spec/1.2.2/#chapter-9-document-stream-productions))
     * put **a line** with `---` before rule starts and **a line**  with `...` after rule ends
 1. one can use **Kunai** with rules either from [config](../configuration#configuration-file) or from [cli](../configuration#advanced-cli-usage)
-1. a rule can either be a **detection** or a **filtering** rule
-    * filtering rules output event **as is**
-    * detection rules output event with **detection information** in `.detection` section
+1. a rule can be one of these types [`detection`](#detection-rules),[`filter`](#filtering-rules) or [`dependency`](#rule-composition)
+    * `detection` rules output event with **detection information** in `.detection` section
+    * `filter` rules output event **as is**
+    * `dependency` rule are evaluated only when used in **other rule types** 
 1. `match-on` section is **very important** as it allows to quickly filter events
 1. every `match` in `matches` must be in the form `$VAR_NAME: FIELD_PATH OPERATOR 'VALUE'`
     * `FIELD_PATH`: **field's absolute path** starting with `.`, separated by `.`
