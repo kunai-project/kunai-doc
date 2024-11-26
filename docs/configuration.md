@@ -195,10 +195,11 @@ Arguments:
   [LOG_FILES]...  
 
 Options:
-  -c, --config <FILE>     Specify a configuration file to use. Command line options supersede the ones specified in the configuration file
-  -r, --rule-file <FILE>  Detection/filtering rule file. Supersedes configuration file
-  -i, --ioc-file <FILE>   File containing IoCs (json line)
-  -h, --help              Print help
+  -c, --config <FILE>                Specify a configuration file to use. Command line options supersede the ones specified in the configuration file
+  -r, --rule-file <FILE>             Detection/filtering rule file. Supersedes configuration file
+  -i, --ioc-file <FILE>              File containing IoCs (json line)
+  -s, --min-severity <MIN_SEVERITY>  Minimal severity required to show detection
+  -h, --help                         Print help
 ```
 
 A typical usage of the replay command would be: `./kunai replay -i iocs.json -r rules.ioc /path/to/kunai/logs.jsonl`
