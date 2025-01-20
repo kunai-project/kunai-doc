@@ -37,6 +37,13 @@ host_uuid: c030b40d-0eab-417b-b33a-22d952357984
 # NB: increasing this limit also increases the memory used by Kunai.
 max_buffered_events: 1024
 
+# Settings that define the maximum number of events per second (per CPU)
+# allowed before a task is throttled.  If this limit is exceeded, an error
+# event is generated and a message is printed to stderr.  When throttling
+# occurs, only file system events will be dropped.  This mechanism prevents
+# the loss of critical events during file system bursts.
+max_eps_fs: 2048
+
 # Optional: specify the number of worker threads to use for multi-threading.
 # Set to 0 to use the maximum number of CPUs.
 # By default, Kunai is single-threaded.
