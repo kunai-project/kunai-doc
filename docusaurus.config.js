@@ -49,7 +49,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: editUrl,
-          lastVersion: '0.4.0',
+          lastVersion: '0.5.0',
           versions: {
             current: {
               // utf8 barrier emojis
