@@ -2,6 +2,8 @@
 
 [MISP](https://www.misp-project.org) is an **open-source** cyber-threat information sharing platform which has been adopted by many actors of the industry over the last years. Organizations usually use it to exchange information about their own IT security incidents or about their Cyber Threat Intelligence (CTI) activities. Therefore a **MISP** instance, well connected with other instances, can quickly become a real gold mine containing a massive amount of **Indicators of Compromise (IoC)**. By essence **IoC** are very specific and can be used to quickly identify compromised systems. In this blog post we are going to detail how to easily use **IoC** stored in a **MISP** instance to configure **Kunai** for real time compromise detection.
 
+<!-- truncate -->
+
 ## Warm up
 
 The first step to do  is to get familiar with the kind of events **Kunai** is able to monitor on your system. So please, take a quick read over the [events documentation](/docs/events), in order to better understand the following steps. Additionally, the reader may want to get familiar with the documentation explaining how to use the tool for [threat detection purposes](/docs/advanced/).
