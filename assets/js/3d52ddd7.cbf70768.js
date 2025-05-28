@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkunai_doc=self.webpackChunkkunai_doc||[]).push([[901],{4224:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/r-d","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

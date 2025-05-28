@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkunai_doc=self.webpackChunkkunai_doc||[]).push([[1331],{5720:a=>{a.exports=JSON.parse('{"label":"R&D","permalink":"/blog/tags/r-d","allTagsPath":"/blog/tags","count":1}')}}]);
