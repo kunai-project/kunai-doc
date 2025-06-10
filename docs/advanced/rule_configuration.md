@@ -148,16 +148,14 @@ If you have made the experiment, you may have noted that when the rule matches t
 
 ## Filtering Rules
 
-Filtering rules on the other hand are made to **select** the logs we want **Kunai** to show.
-With those you can be very granular on the kind of logs you want to filter in/out.
-The difference between a detection and a filtering rule is very little, it is just a switch
-to toggle in the rule.
+Filtering rules are designed to **select** the logs we want **Kunai** to display. These rules allow for granular control over the types of logs you want to include or exclude.
+
+The distinction between a detection rule and a filtering rule is minimal; it is simply about changing the rule type.
 
 :::info
-Events matching **ONLY filtering rules** will be shown **as is**, which means that there will
-not be any `detection` section in the event.
+- If the event matching engine is loaded with at least one filter, only the events matching those filters will be shown. **All non-matching events not be shown.**
+- Any event that matches a filtering rule will include a new `.filter` field containing information about the matching filters. This is very similar to the `.detection` field mentioned earlier.
 :::
-
 
 ### Example
 
