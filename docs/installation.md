@@ -1,8 +1,29 @@
 ---
 sidebar_position: 2
+title: Installation
 ---
 
-# Installation
+## Get Kunai Binary 
+
+### Download
+
+1. Download **Kunai** from GitHub on the [release page](https://github.com/kunai-project/kunai/releases).
+2. Download the signature file (i.e., the one ending with `.asc`) corresponding to the binary you previously downloaded.
+3. Add the signature key:
+   ```bash
+   gpg --keyserver pgp.circl.lu --recv-keys C0F6E8F2C1AB2799A31F416C0548A778D21D10AD
+   ```
+4. Verify your download. For example, if you downloaded the `x86_64` version of Kunai, use the following command:
+   ```bash
+   gpg --verify kunai-amd64.asc kunai-amd64
+   ```
+
+### Build Kunai
+
+To build Kunai, please follow the instructions in [this repository](https://github.com/kunai-project/kunai-build-docker/).
+
+
+## Installation
 
 Kunai can be easily installed on the system using the `install` command
 
