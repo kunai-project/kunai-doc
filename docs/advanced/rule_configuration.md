@@ -339,7 +339,7 @@ When a **file scan** is issued **any path** contained in the event is scanned. S
 ```yaml
 # this rule scans any bash script written on disk
 name: scan.any.bash.script.write
-type: filter
+type: filter
 match-on:
     events:
         kunai: [ write_close ]
@@ -353,8 +353,7 @@ actions: [ scan-files ]
 name: show.file_scan
 match-on:
   events:
-    kunai: [ file_scan ] 
-
+    kunai: [ file_scan ]
 ```
 
 To test the above rule:
