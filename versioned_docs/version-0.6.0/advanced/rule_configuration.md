@@ -383,7 +383,7 @@ until it gets re-opened.
 1. one can use **Kunai** with rules either from [config](../configuration#configuration-file) or from [cli](../configuration#advanced-cli-usage)
 1. a rule can be one of these types [`detection`](#detection-rules),[`filter`](#filtering-rules) or [`dependency`](#rule-composition)
     * `detection` rules output event with **detection information** in `.detection` section
-    * `filter` rules output event **as is**
+    * `filter` rules output event with **filter information** in `.filter` section
     * `dependency` rule are evaluated only when used in **other rule types** 
 1. `match-on` section is **very important** as it allows to quickly filter events
 1. every `match` in `matches` must be in the form `$VAR_NAME: FIELD_PATH OPERATOR 'VALUE'`
