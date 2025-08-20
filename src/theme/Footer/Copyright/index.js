@@ -6,7 +6,7 @@ export default function CopyrightWrapper(props) {
   return (
     <>
       <section>
-        <EuFundLogo style={{ height: '4em' }} />
+        <EuFundLogo style={{ height: '5em', background: 'white', paddingTop: '5px', paddingBottom: '5px', borderRadius: '8px', alignItems: 'center' }} />
       </section>
 
       <Copyright {...props} />
