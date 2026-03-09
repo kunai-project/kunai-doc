@@ -40,3 +40,30 @@ If you decide to enable these events (disabled by default), please be aware that
 }
 ```
 
+## Additional Details
+
+### Why This Event Matters
+
+The `write` event is crucial for:
+
+1. **File Monitoring**: Tracks when files are written, providing visibility into file modification patterns across the system.
+1. **Security Monitoring**: Detects unauthorized file modifications that may indicate malware installation, data tampering, or persistence mechanisms.
+1. **Forensic Analysis**: Establishes timelines of file modifications for incident investigation and understanding attack patterns.
+
+### Key Fields Explained
+
+#### `.data.ancestors`
+
+- A pipe-separated list of the executable paths of the process ancestors that wrote to the file.
+
+#### `.data.command_line`
+
+- The command line of the process that wrote to the file.
+
+#### `.data.exe.path`
+
+- The path to the executable that wrote to the file.
+
+#### `.data.path`
+
+- The full path to the file that was written.
