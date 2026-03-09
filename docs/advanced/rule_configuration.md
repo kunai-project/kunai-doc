@@ -425,7 +425,7 @@ Every Kunai event goes through the rule engine, which determines whether to incl
 3. **Include rules** are evaluated on events that passed exclude filtering
 4. Events that don't match any include rules are excluded by default
 
-:::warning Important Architecture Notes
+:::warning Architecture Note
 Filter rules and detection rules operate independently:
 - Filter rules cannot exclude detection rules
 - Detection rules cannot exclude filters
