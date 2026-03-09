@@ -41,3 +41,30 @@ If you decide to enable these events (disabled by default), please be aware that
 }
 ```
 
+## Additional Details
+
+### Why This Event Matters
+
+The `read` event is crucial for:
+
+1. **File Access Monitoring**: Tracks when files are read, providing visibility into file access patterns across the system.
+1. **Security Monitoring**: Detects unauthorized file reads that may indicate credential harvesting or reconnaissance activities.
+1. **Forensic Analysis**: Establishes timelines of file access for incident investigation and understanding attack patterns.
+
+### Key Fields Explained
+
+#### `.data.ancestors`
+
+- A pipe-separated list of the executable paths of the process ancestors that read the file.
+
+#### `.data.command_line`
+
+- The command line of the process that read the file.
+
+#### `.data.exe.path`
+
+- The path to the executable that read the file.
+
+#### `.data.path`
+
+- The full path to the file that was read.
