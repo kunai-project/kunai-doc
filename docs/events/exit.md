@@ -31,3 +31,35 @@ Exit events get generated when a single task (process or thread) exits.
   }
 }
 ```
+
+## Additional Details
+
+### Why This Event Matters
+
+The `exit` event is crucial for:
+
+1. **Process Lifecycle Monitoring**: Tracks when processes and threads terminate, providing complete visibility into process lifecycles.
+1. **Error Detection**: Identifies processes that exit with non-zero error codes, indicating potential problems or failures.
+1. **Security Monitoring**: Detects unusual process termination patterns that may indicate malicious activity or process killing.
+
+:::tip
+The `error_code` field indicates the exit status of the task. A value of 0 typically indicates successful completion, while non-zero values indicate errors or abnormal termination.
+:::
+
+### Key Fields Explained
+
+#### `.data.ancestors`
+
+- A pipe-separated list of the executable paths of the process ancestors that exited.
+
+#### `.data.command_line`
+
+- The command line of the process that exited.
+
+#### `.data.exe.path`
+
+- The path to the executable that exited.
+
+#### `.data.error_code`
+
+- The exit status code of the task (0 for success, non-zero for errors).
