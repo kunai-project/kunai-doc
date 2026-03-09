@@ -4,7 +4,7 @@ sidebar_position: 22
 
 # Bpf Socket Filter Attached
 
-A socket filter attachement has been made (for instance via [getsockopt](https://man7.org/linux/man-pages/man2/getsockopt.2.html) syscall).
+A socket filter attachment has been made (for instance via [getsockopt](https://man7.org/linux/man-pages/man2/getsockopt.2.html) syscall).
 
 ```json
 {
@@ -47,6 +47,66 @@ A socket filter attachement has been made (for instance via [getsockopt](https:/
 
 :::info
 
-* `.data.filter.len` is the length of the filter **in number of BPF instructions**
+* `.data.filter.len` is the length of the filter **in number of BPF instructions**
 * `.data.filter.size` is the size of the filter **in bytes**
 :::
+
+## Additional Details
+
+### Why This Event Matters
+
+The `bpf_socket_filter` event is crucial for:
+
+1. **Network Monitoring**: Tracks when BPF socket filters are attached, which is commonly used by network monitoring tools like tcpdump.
+1. **Security Monitoring**: Detects potentially malicious socket filtering that could be used for network sniffing or traffic manipulation.
+1. **Forensic Analysis**: Provides cryptographic hashes of socket filters for verification and incident investigation.
+
+:::tip
+The `filter` field contains cryptographic hashes of the BPF socket filter program, allowing you to find known malicious filters. The `len` field shows the number of BPF instructions, while `size` shows the total size in bytes.
+:::
+
+### Key Fields Explained
+
+#### `.data.ancestors`
+
+- A pipe-separated list of the executable paths of the process ancestors that attached the socket filter.
+
+#### `.data.command_line`
+
+- The command line of the process that attached the socket filter.
+
+#### `.data.exe.path`
+
+- The path to the executable that attached the socket filter.
+
+#### `.data.socket`
+
+- Information about the socket including domain, type, and protocol.
+
+#### `.data.filter.md5`
+
+- The MD5 hash of the BPF socket filter program.
+
+#### `.data.filter.sha1`
+
+- The SHA1 hash of the BPF socket filter program.
+
+#### `.data.filter.sha256`
+
+- The SHA256 hash of the BPF socket filter program.
+
+#### `.data.filter.sha512`
+
+- The SHA512 hash of the BPF socket filter program.
+
+#### `.data.filter.len`
+
+- The length of the filter in number of BPF instructions.
+
+#### `.data.filter.size`
+
+- The size of the filter in bytes.
+
+#### `.data.attached`
+
+- Boolean indicating whether the socket filter was successfully attached.
