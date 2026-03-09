@@ -53,7 +53,7 @@ const config = {
           versions: {
             current: {
               // utf8 barrier emojis
-              label: `🚧 Unstable 🚧`,
+              label: `🚧 Git 🚧`,
             },
           },
         },
