@@ -13,6 +13,7 @@ This event follows the same **event processing path** as any other **Kunai event
   "data": {
     "path": "/tmp/hello_kunai.txt",
     "meta": {
+      "magic": "ASCII text",
       "md5": "9047c9883f04d6ec7ce153b395582c7f",
       "sha1": "d41b8cc90a37973847e29b7fb5fa502c926f5aaf",
       "sha256": "89e6cbb99f61440be7ad785203a0e91ecf523568254be6330b533700d917eb45",
@@ -42,3 +43,67 @@ This event follows the same **event processing path** as any other **Kunai event
   }
 }
 ```
+
+## Additional Details
+
+### Why This Event Matters
+
+The `file_scan` event is crucial for:
+
+1. **Threat Detection**: Identifies files that match malicious signatures or patterns, helping detect malware and suspicious files.
+2. **Forensic Analysis**: Provides comprehensive file metadata including hashes, file type identification, and signature matches for investigation.
+3. **Automated Response**: Enables automated actions to be taken when specific file signatures are detected.
+
+:::tip
+The `.data.meta.magic` field provides libmagic file type identification, which helps determine the actual file format regardless of the file extension. This is particularly useful for detecting disguised malicious files.
+:::
+
+### Key Fields Explained
+
+#### `.data.path`
+
+- The path to the file that was scanned.
+
+#### `.data.meta.magic`
+
+- The file type identification using libmagic, providing a human-readable description of the file format.
+
+#### `.data.meta.md5`
+
+- The MD5 hash of the scanned file.
+
+#### `.data.meta.sha1`
+
+- The SHA1 hash of the scanned file.
+
+#### `.data.meta.sha256`
+
+- The SHA256 hash of the scanned file.
+
+#### `.data.meta.sha512`
+
+- The SHA512 hash of the scanned file.
+
+#### `.data.meta.size`
+
+- The size of the scanned file in bytes.
+
+#### `.data.meta.error`
+
+- Any error that occurred during file metadata collection.
+
+#### `.data.signatures`
+
+- An array of signature names that matched the scanned file.
+
+#### `.data.positives`
+
+- The number of signatures that matched the file.
+
+#### `.data.source_event`
+
+- The UUID of the event that triggered this file scan.
+
+#### `.data.scan_error`
+
+- Any error that occurred during the scanning process.
