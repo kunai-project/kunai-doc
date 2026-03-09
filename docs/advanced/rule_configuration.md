@@ -280,6 +280,158 @@ condition: $t
 severity: 2
 ```
 
+## Rule Decision Mechanism
+
+Kunai rules support an **include/exclude** decision mechanism that provides granular control over event selection. This feature works with both **detection** and **filter** rules and is particularly useful for implementing exclusion-based logic, such as whitelisting.
+
+:::info
+By default, all rules have an implicit `decision: include` setting to maintain backward compatibility with existing rules.
+:::
+
+### Include vs Exclude Rules
+
+#### Include Rules (Default)
+
+Include rules explicitly specify which events should be processed and output. These are the standard rule type that most users will work with.
+
+```yaml
+# Explicit include rule (equivalent to default behavior)
+name: include.mprotect_exec
+decision: include  # optional - include is the default
+type: detection  # or filter
+match-on:
+  events:
+    kunai: ["mprotect_exec"]
+```
+
+#### Exclude Rules
+
+Exclude rules allow you to filter out specific events before other include rules are evaluated. Exclude rules are evaluated prior to include rules and can prevent events from being processed even if they would match other include rules. This allows the engine to short-circuit event scanning and improve performance by avoiding unnecessary processing of excluded events.
+
+```yaml
+# Include any mprotect_exec event
+name: mprotect.include
+decision: include
+type: detection
+match-on:
+  events:
+    kunai: ["mprotect_exec"]
+
+---
+# Exclude known false positives from browsers
+name: mprotect.exclude.browsers
+decision: exclude
+type: detection
+match-on:
+  events:
+    kunai: ["mprotect_exec"]
+matches:
+  # here we depend on another rule so the dependency is evaluated first
+  $top: rule(mprotect.include)
+  $wl0: .data.exe.path == "/usr/lib/firefox/firefox"
+  $wl1: .data.exe.path == "/usr/lib/chromium/chromium"
+  $wl2: .data.exe.path == "/usr/lib/thunderbird/thunderbird"
+# if parent rule matched and it's a whitelisted browser, exclude it
+condition: $top and any of $wl
+```
+
+### When and Why to Use the Decision Mechanism
+
+The include/exclude decision mechanism is particularly valuable for organizing complex rule sets and improving performance:
+
+#### Key Use Cases
+
+**Whitelisting and False Positive Reduction:**
+- Exclude known-good applications (browsers, system tools, JIT compilers)
+- Filter out noisy but legitimate activity patterns
+- Refine detection without disabling entire rule categories
+
+**Performance Optimization:**
+- Short-circuit processing for high-volume, known-good events
+- Reduce overall system load by early filtering
+
+**Rule Management:**
+- Separate core detection logic from exception handling
+- Maintain cleaner, more modular rule sets
+- Add exclusions incrementally as new false positives are identified
+
+
+### Practical Examples
+
+#### Example 1: Filter Rules with Exclusions
+
+```yaml
+# Include all execve events
+name: include.all.execve
+decision: include
+type: filter
+match-on:
+  events:
+    kunai: ["execve"]
+
+---
+# Exclude specific legitimate executables, we don't want to log
+name: exclude.legitimate.apps
+decision: exclude
+type: filter
+match-on:
+  events:
+    kunai: ["execve"]
+matches:
+  $top: rule(include.all.execve)
+  $wl0: .data.exe.path == "/usr/bin/systemd"
+  $wl1: .data.exe.path == "/usr/bin/dbus-daemon"
+condition: $top and any of $wl
+```
+
+#### Example 2: Detection Rules with Browser Whitelisting
+
+```yaml
+# Detect suspicious mprotect_exec activity
+name: suspicious.mprotect
+decision: include
+type: detection
+match-on:
+  events:
+    kunai: ["mprotect_exec"]
+severity: 7
+
+---
+# Exclude known JIT compilers
+name: exclude.jit.compilers
+decision: exclude
+type: detection
+match-on:
+  events:
+    kunai: ["mprotect_exec"]
+matches:
+  $top: rule(detect.suspicious.mprotect)
+  $jit: .data.exe.path ~= '/usr/lib/(firefox|chromium|thunderbird)'
+condition: $top and $jit
+```
+
+## Rule Evaluation Process
+
+Every Kunai event goes through the rule engine, which determines whether to include or exclude the event. The evaluation follows this decision process:
+
+### Default Behavior
+- If the engine is loaded with at least one rule: default decision is `exclude` (events must match include rules to be shown)
+- If no rules are loaded: default decision is `include` (all events are shown)
+
+### Evaluation Steps
+
+1. **Rule dependencies** are evaluated first - any rule referenced via `rule(...)` is computed before the rule that depends on it
+2. **Exclude rules** are evaluated next to identify events that should be filtered out. If any exclusion matches, the event is excluded and evaluation stops.
+3. **Include rules** are evaluated on events that passed exclude filtering
+4. Events that don't match any include rules are excluded by default
+
+:::warning Important Architecture Notes
+Filter rules and detection rules operate independently:
+- Filter rules cannot exclude detection rules
+- Detection rules cannot exclude filters
+- Each rule type has its own separate include/exclude evaluation pipeline
+:::
+
 
 ## Trigger Actions on Events
 
