@@ -4,7 +4,7 @@ sidebar_position: 21
 
 # Bpf Prog Load
 
-This **event** is generated every time a BPF program is loaded into the kernel.
+This **event** is generated every time a BPF program is loaded into the kernel.
 
 :::info
 Some fields might set to `null`, this is when the information is not available for the current **kernel**.
@@ -52,3 +52,63 @@ Some fields might set to `null`, this is when the information is not available f
   }
 }
 ```
+
+## Additional Details
+
+### Why This Event Matters
+
+The `bpf_prog_load` event is crucial for:
+
+1. **Security Monitoring**: Tracks BPF program loading, which can be used for both legitimate performance monitoring and malicious activities like rootkits and kernel-level attacks.
+1. **Container Security**: Monitors BPF programs loaded within containers, helping detect container escapes and privileged operations.
+1. **Forensic Analysis**: Provides detailed information about loaded BPF programs including hashes, types, and verification status for incident investigation.
+
+### Key Fields Explained
+
+#### `.data.ancestors`
+
+- A pipe-separated list of the executable paths of the process ancestors that loaded the BPF program.
+
+#### `.data.command_line`
+
+- The command line of the process that loaded the BPF program.
+
+#### `.data.exe.path`
+
+- The path to the executable that loaded the BPF program.
+
+#### `.data.id`
+
+- The unique identifier assigned to the BPF program by the kernel.
+
+#### `.data.prog_type`
+
+- The type of BPF program, including both numeric `id` and human-readable `name` (e.g., "cgroup_device", "socket_filter", "kprobe").
+
+#### `.data.tag`
+
+- A unique tag/identifier for the BPF program.
+
+#### `.data.attached_func`
+
+- The function to which the BPF program is attached (if applicable).
+
+#### `.data.name`
+
+- The name of the BPF program.
+
+#### `.data.ksym`
+
+- The kernel symbol associated with the BPF program.
+
+#### `.data.bpf_prog`
+
+- Metadata about the BPF program including cryptographic hashes (MD5, SHA1, SHA256, SHA512) and size.
+
+#### `.data.verified_insns`
+
+- The number of BPF instructions that were successfully verified by the kernel verifier.
+
+#### `.data.loaded`
+
+- Boolean indicating whether the BPF program was successfully loaded.
