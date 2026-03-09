@@ -6,10 +6,6 @@ sidebar_position: 40
 
 This kind of event is generated when memory protection is turned to **executable**.
 
-:::info
-For some processes, those using JIT compilers, it is legit to generate a lot of mprotect_exec events.
-:::
-
 ```json
 {
   "data": {
@@ -37,4 +33,37 @@ For some processes, those using JIT compilers, it is legit to generate a lot of 
 }
 ```
 
+## Additional Details
 
+### Why This Event Matters
+
+The `mprotect_exec` event is crucial for:
+
+1. **Memory Security**: Tracks when memory regions are made executable, which is a common technique used by malware and shellcode.
+1. **Code Injection Detection**: Identifies suspicious memory protection changes that may indicate code injection attacks.
+
+:::tip
+This event is particularly important for security monitoring as making memory executable is a key step in many exploitation techniques. However, some legitimate applications (like JIT compilers) generate many such events.
+:::
+
+### Key Fields Explained
+
+#### `.data.ancestors`
+
+- A pipe-separated list of the executable paths of the process ancestors that changed memory protection.
+
+#### `.data.command_line`
+
+- The command line of the process that changed memory protection.
+
+#### `.data.exe.path`
+
+- The path to the executable that changed memory protection.
+
+#### `.data.addr`
+
+- The memory address where protection was changed to executable.
+
+#### `.data.prot`
+
+- The new protection flags applied to the memory region (0x5 typically means PROT_READ | PROT_EXEC).
