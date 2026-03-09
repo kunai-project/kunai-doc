@@ -6,10 +6,6 @@ sidebar_position: 9
 
 Event generated when a [`ptrace`](https://www.man7.org/linux/man-pages/man2/ptrace.2.html) syscall is issued. `.data.mode` reflects the `ptrace` mode as defined in [**Linux Kernel headers**](https://elixir.bootlin.com/linux/v6.11.5/source/include/linux/ptrace.h#L62)
 
-:::caution
-So far this events fires only when `mode` contains `PTRACE_MODE_ATTACH` flag
-:::
-
 ```json
 {
   "data": {
@@ -53,3 +49,55 @@ So far this events fires only when `mode` contains `PTRACE_MODE_ATTACH` flag
   }
 }
 ```
+
+## Additional Details
+
+### Why This Event Matters
+
+The `ptrace` event is crucial for:
+
+1. **Process Debugging Monitoring**: Tracks when processes use ptrace to debug or inspect other processes.
+1. **Security Monitoring**: Detects suspicious ptrace activity that may indicate process injection, memory inspection, or any other debugging attempt.
+1. **Forensic Analysis**: Provides information about process inspection activities for incident investigation.
+
+:::tip
+The `ptrace` syscall is commonly used by debuggers like gdb, but can also be used maliciously for process injection or memory manipulation.
+:::
+
+:::caution
+ This event currently fires **only** when `.data.mode` contains the `PTRACE_MODE_ATTACH` flag, indicating a process is attaching to another process for debugging.
+:::
+
+### Key Fields Explained
+
+#### `.data.ancestors`
+
+- A pipe-separated list of the executable paths of the process ancestors that called ptrace.
+
+#### `.data.command_line`
+
+- The command line of the process that called ptrace.
+
+#### `.data.exe.path`
+
+- The path to the executable that called ptrace.
+
+#### `.data.mode`
+
+- The ptrace mode flags indicating the type of ptrace operation.
+
+#### `.data.target`
+
+- Information about the target process being traced.
+
+#### `.data.target.command_line`
+
+- The command line of the target process.
+
+#### `.data.target.exe.path`
+
+- The path to the executable of the target process.
+
+#### `.data.target.task`
+
+- Detailed task information about the target process including name, PID, TGID, GUUID, user/group IDs, namespaces, and flags.
