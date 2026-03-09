@@ -33,3 +33,38 @@ This event gets generated whenever a file is being renamed.
 }
 ```
 
+## Additional Details
+
+### Why This Event Matters
+
+The `file_rename` event is crucial for:
+
+1. **File Activity Monitoring**: Tracks when files are renamed or moved, providing visibility into file system modifications.
+1. **Security Monitoring**: Detects suspicious file renaming patterns that may indicate malware attempting to hide files, ransomware activity, or unauthorized file manipulation.
+1. **Forensic Analysis**: Establishes timelines of file movements for incident investigation and understanding attack patterns.
+
+:::tip
+This event captures both file renames and moves (which are essentially renames to a different directory). The `old` field shows the original path while `new` shows the destination path.
+:::
+
+### Key Fields Explained
+
+#### `.data.ancestors`
+
+- A pipe-separated list of the executable paths of the process ancestors that renamed the file.
+
+#### `.data.command_line`
+
+- The command line of the process that renamed the file.
+
+#### `.data.exe.path`
+
+- The path to the executable that renamed the file.
+
+#### `.data.old`
+
+- The original path of the file before renaming.
+
+#### `.data.new`
+
+- The new path of the file after renaming.
