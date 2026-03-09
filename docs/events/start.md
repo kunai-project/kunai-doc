@@ -28,9 +28,10 @@ Below is a sample JSON payload generated for the `start` event:
       "domainname": "(none)"
     },
     "kunai": {
-      "version": "0.4.0",
+      "version": "0.6.2",
       "exe": {
         "path": "/usr/bin/kunai",
+        "magic": "ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV)",
         "md5": "15078a8ec160157e37e946a47a3ab78b",
         "sha1": "7412dd078f7f5faf3c4643cbb4b6c511f4b0d608",
         "sha256": "47be2ba175b112c9d80fd548ff3da804279fa0e3b5e731f4499595ac375ae29b",
@@ -75,6 +76,6 @@ The `start` event is crucial for:
 
 #### `.data.kunai`
 - **`version`**: The running version of Kunai.
-- **`exe`**: Metadata about the Kunai executable, including its path, size, and hash values.
+- **`exe`**: Metadata about the Kunai executable, including its path, file type identification (magic), size, and hash values.
 - **`config.sha256`**: A checksum of the configuration structure, useful for detecting changes or inconsistencies.
 

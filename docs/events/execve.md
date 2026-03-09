@@ -19,6 +19,7 @@ Below is a sample JSON payload for an `execve` event:
     "command_line": "mktemp -d -p /tmp/trash",
     "exe": {
       "path": "/usr/bin/mktemp",
+      "magic": "ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV)",
       "md5": "0d7660dac3bffd6b76d3054da0fa1216",
       "sha1": "817329148a765bc2dc82baa230638d1987d7a284",
       "sha256": "f32938cf25ddd6f6800a8e9b406595534d0eb27993587bbdeee2e83dd97d8406",
@@ -74,6 +75,10 @@ The `execve` event is significant for several reasons:
 #### `.data.exe.path`
 
 - The path to the executable being run.
+
+#### `.data.exe.magic`
+
+- The file type identification using safe Rust port of libmagic, providing a human-readable description of the file format (e.g., "ELF 64-bit LSB pie executable, x86-64").
 
 #### `.data.exe.md5`
 

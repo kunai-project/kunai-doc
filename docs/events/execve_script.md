@@ -19,6 +19,7 @@ Below is a sample JSON payload for an `execve_script` event:
     "command_line": "/bin/bash /tmp/tmp.KsA9Ym95fq_kunai_test.sh",
     "exe": {
       "path": "/tmp/tmp.KsA9Ym95fq_kunai_test.sh",
+      "magic": "POSIX shell script, ASCII text executable",
       "md5": "64b8185d28042ea96feb251e12fe632b",
       "sha1": "31683c67b020d90f02a42e43e7758184ef98c12f",
       "sha256": "cda81b42b75647daf6b70a626380c199fe665d721e63bfe34c96b65da0289627",
@@ -28,6 +29,7 @@ Below is a sample JSON payload for an `execve_script` event:
     },
     "interpreter": {
       "path": "/usr/bin/bash",
+      "magic": "ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV)",
       "md5": "efe8524ed6a94d298fdde8da1fa6aaed",
       "sha1": "f891da1be80c1496a8ec9898816bb9fce9ad0d45",
       "sha256": "68bac453a428796f18114a1bf43420d814e36555808ec98eacb782de565c06eb",
@@ -84,6 +86,10 @@ The `execve_script` event is significant for several reasons:
 
 - The path to the script or binary being executed.
 
+#### `.data.exe.magic`
+
+- The file type identification using a safe Rust port of libmagic, providing a human-readable description of the file format.
+
 #### `.data.exe.md5`
 
 - The MD5 hash of the script or binary file.
@@ -111,6 +117,10 @@ The `execve_script` event is significant for several reasons:
 #### `.data.interpreter.path`
 
 - The path to the interpreter used to execute the script or binary.
+
+#### `.data.interpreter.magic`
+
+- The file type identification using a safe Rust port of libmagic, providing a human-readable description of the interpreter file format.
 
 #### `.data.interpreter.md5`
 
