@@ -8,12 +8,11 @@ This events gets generated when data is sent to a remote IP address.
 
 :::tip
 * `.data.dst.hostname` is a correlated field from a previous [dns_query](dns_query) event
-* `.data.data_entropy` gives you **an estimate** of the entropy of the data sent. This can be used to identify **high entropy** (i.e. compressed, encrypted) communications.
+* `.data.data_entropy` field provides an **estimate** of the entropy of the sent data, which can help identify encrypted or compressed traffic. High entropy values may indicate encrypted communications, while low entropy may suggest plaintext data
 :::
 
 :::tip detection idea
-This event can be used to spot executables sending data over the network while 
-they are not supposed to.
+This event can be used to spot executables sending data over the network while they are not supposed to.
 :::
 
 ```json
@@ -59,3 +58,51 @@ they are not supposed to.
   }
 }
 ```
+
+## Additional Details
+
+### Why This Event Matters
+
+The `send_data` event is crucial for:
+
+1. **Network Monitoring**: Tracks when processes send data over the network, providing visibility into outbound communications.
+1. **Security Monitoring**: Detects unauthorized data exfiltration, command-and-control communications, or suspicious network activity.
+1. **Forensic Analysis**: Provides detailed information about network communications including entropy analysis for incident investigation.
+
+### Key Fields Explained
+
+#### `.data.ancestors`
+
+- A pipe-separated list of the executable paths of the process ancestors that sent the data.
+
+#### `.data.command_line`
+
+- The command line of the process that sent the data.
+
+#### `.data.exe.path`
+
+- The path to the executable that sent the data.
+
+#### `.data.socket`
+
+- Information about the socket including domain, type, and protocol.
+
+#### `.data.src`
+
+- Source IP address and port of the connection.
+
+#### `.data.dst`
+
+- Destination information including hostname (if available), IP address, port, and whether it's a public IP.
+
+#### `.data.community_id`
+
+- A community ID for correlation with other security tools.
+
+#### `.data.data_entropy`
+
+- An estimate of the entropy of the sent data, useful for identifying encrypted or compressed traffic.
+
+#### `.data.data_size`
+
+- The size of the data sent in bytes.
