@@ -1,6 +1,6 @@
 ---
 title: Configuration with Rules
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 Using **Kunai** to monitor every single event happening on a system is nice as it gives a very deep insight of what is going on. However, this approach generates loads of events. While it might be the way to go for some **Kunai** users, some others might be interested into detecting only very specific events (based on configurable rules) and show only those ones. This is exactly the topic we are going to tackle in this section of the documentation.
@@ -12,7 +12,7 @@ If an event is **not desired** prefer [**disabling it in configuration**](../con
 :::
 
 :::info
-We intentionally do not go too deep into the rule format as it will be part of a dedicated documentation in the [gene-rs project](https://github.com/0xrawsec/gene-rs)
+We intentionally do not go too deep into the rule format as it will is part of a dedicated documentation. For comprehensive syntax reference, see [Rule Syntax Reference](./rule_syntax_reference).
 :::
 
 ## Detection Rules
@@ -525,34 +525,3 @@ To scan **dropped files** you must use [`write_close`](../events/write_close) ev
 indicate the file **has been closed** and de-facto cannot be written again
 until it gets re-opened.
 :::
-
-## Memo about **Kunai** Rules
-
-1. rules are written in [YAML](https://yaml.org/)
-1. several rules can be defined in a single file (see [YAML documents](https://yaml.org/spec/1.2.2/#chapter-9-document-stream-productions))
-    * put **a line** with `---` before rule starts and **a line**  with `...` after rule ends
-1. one can use **Kunai** with rules either from [config](../configuration#configuration-file) or from [cli](../configuration#advanced-cli-usage)
-1. a rule can be one of these types [`detection`](#detection-rules),[`filter`](#filtering-rules) or [`dependency`](#rule-composition)
-    * `detection` rules output event with **detection information** in `.detection` section
-    * `filter` rules output event **as is**
-    * `dependency` rule are evaluated only when used in **other rule types** 
-1. `match-on` section is **very important** as it allows to quickly filter events
-1. every `match` in `matches` must be in the form `$VAR_NAME: FIELD_PATH OPERATOR 'VALUE'`
-    * `FIELD_PATH`: **field's absolute path** starting with `.`, separated by `.`
-    * `OPERATOR`: 
-        * `==` : **equality operator**
-        * `>=`, `<=`, `>`, `<` : **comparison operators** &rarr; `VALUE` must be a **number**
-        * `&=` : **flag checking operator** &rarr; `VALUE` must be a **number**
-        * `~=` : **regex operator** &rarr; `VALUE` must be a **string** regex following [syntax](https://docs.rs/regex/latest/regex/#syntax)
-    * every **field value** found at `FIELD_PATH` is expected to be of the same type than `VALUE`
-1. `condition` defines the **logic** to apply on the **matches**:
-    * `not`, `and` and `or` keywords
-    * support for **aggregated notation**:
-      * `all of them`: all the variable must be `true`
-      * `all of $VAR_PREFIX`: all variables **starting with VAR_PREFIX** must be `true`
-      * `N of them`: `N` variables must be `true`
-      * `N of $VAR_PREFIX`: `N` variables **starting with VAR_PREFIX** must be `true`
-      * `none of them`: **None** of the variables must be `true` (all `false`)
-      * `none of $VAR_PREFIX`: **None** of the variables **starting with VAR_PREFIX** must be `true` 
-
-

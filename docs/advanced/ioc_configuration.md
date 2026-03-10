@@ -1,6 +1,6 @@
 ---
 title: Builtin IoC matching
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 **IoC (Indicator of Compromise)** scanning results from the same motivation behind [detection rules](./rule_configuration). It addresses the need to log only events matching specific **IoCs**. Even though one can match IoC with [detection rules](./rule_configuration) it is not very convenient to manage for lots of **IoCs** and even less to automate. The other difference is on the resource management aspect. Detection rules has some non negligible processing/memory cost to work properly (find the rules to apply and then match against fields). On the other hand, IoC matching is reduced to a lookup in a set, so it is much more cpu and memory efficient.
