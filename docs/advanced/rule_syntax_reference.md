@@ -34,7 +34,7 @@ meta:
 match-on:
   events:
     kunai: [event_name1, event_name2]  # Events to match
-    # Use '-' prefix to exclude specific events
+    # Use '-' prefix to exclude specific events (include all others)
     # kunai: [-event_to_exclude, -another_event]
 
 # Optional: Field matching definitions (default: no variables)
