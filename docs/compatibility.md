@@ -30,7 +30,7 @@ In order to get your kernel version, run the following command `uname -r`, then 
   </tr>
   <tr>
     <td>Archlinux</td>
-    <td>5.18 to 6.6</td>
+    <td>5.18 to 6.18</td>
   </tr>
 </table> 
 </html>
@@ -78,4 +78,3 @@ root        soft    memlock        infinity
 ```
 
 For more information `man limits.conf`
-
