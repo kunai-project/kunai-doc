@@ -1,55 +1,60 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/duotoneDark');
+import { themes as prismThemes } from "prism-react-renderer";
 
 // Used to debug production build issues faster
 const isDev = !!process.env.DEVELOP;
-const orgName = 'kunai-project'
-const repoName = 'kunai-doc'
-const editUrl = 'https://github.com/' + orgName + '/' + repoName + '/tree/main/'
+const orgName = "kunai-project";
+const repoName = "kunai-doc";
+const editUrl =
+  "https://github.com/" + orgName + "/" + repoName + "/tree/main/";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Kunai',
+  title: "Kunai",
   tagline: "Bring your Linux Threat-Hunting capabilities to the next level",
-  favicon: 'img/favicon.ico',
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://kunai.rocks',
+  url: "https://kunai.rocks",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: orgName, // Usually your GitHub org/user name.
   projectName: repoName, // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
+  },
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           includeCurrentVersion: true,
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: editUrl,
-          lastVersion: '0.6.0',
+          lastVersion: "0.6.0",
           versions: {
             current: {
               // utf8 barrier emojis
@@ -64,7 +69,7 @@ const config = {
           editUrl: editUrl,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -74,28 +79,28 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/kunai-social-card.jpg',
+      image: "img/kunai-social-card.jpg",
       announcementBar: {
-        id: 'announcementBar-1', // Increment on change
+        id: "announcementBar-1", // Increment on change
         content: `⭐️ If you like Kunai, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/kunai-project/kunai">GitHub</a> and follow us on social medias`,
       },
       navbar: {
-        title: 'Kunai',
+        title: "Kunai",
         logo: {
-          alt: 'Kunai',
-          src: 'img/logo.svg',
+          alt: "Kunai",
+          src: "img/logo.svg",
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Documentation',
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "left",
+            label: "Documentation",
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          { to: "/blog", label: "Blog", position: "left" },
           {
-            type: 'docsVersionDropdown',
-            position: 'right',
+            type: "docsVersionDropdown",
+            position: "right",
             //dropdownItemsAfter: [{ to: '/versions', label: 'All versions' }],
             //dropdownActiveClassDisabled: true,
           },
@@ -106,55 +111,55 @@ const config = {
             html: "❤️ Sponsor"
           },*/
           {
-            href: 'https://github.com/' + orgName + '/',
-            position: 'right',
+            href: "https://github.com/" + orgName + "/",
+            position: "right",
             className: "header-github-link",
           },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'Documentation',
-                to: '/docs/quickstart',
+                label: "Documentation",
+                to: "/docs/quickstart",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Community",
             items: [
               {
-                label: 'Discord',
-                href: 'https://discord.gg/AUMaBvHvNU',
+                label: "Discord",
+                href: "https://discord.gg/AUMaBvHvNU",
               },
               {
-                label: 'Mastodon',
-                href: 'https://infosec.exchange/@kunai_project',
+                label: "Mastodon",
+                href: "https://infosec.exchange/@kunai_project",
               },
               {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/kunai-project',
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/company/kunai-project",
               },
               {
-                label: 'X/Twitter',
-                href: 'https://twitter.com/kunai_project',
+                label: "X/Twitter",
+                href: "https://twitter.com/kunai_project",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: "Blog",
+                to: "/blog",
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/' + orgName + '/',
+                label: "GitHub",
+                href: "https://github.com/" + orgName + "/",
               },
             ],
           },
@@ -162,13 +167,13 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Kunai Project, Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-        additionalLanguages: ['json', 'toml', 'bash', 'yaml']
+        theme: prismThemes.github,
+        darkTheme: prismThemes.duotoneDark,
+        additionalLanguages: ["json", "toml", "bash", "yaml"],
       },
       colorMode: {
-        defaultMode: 'dark',
-      }
+        defaultMode: "dark",
+      },
     }),
 };
 

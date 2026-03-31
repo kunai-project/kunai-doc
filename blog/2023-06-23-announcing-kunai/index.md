@@ -8,3 +8,5 @@ tags: [announcement]
 ## Why Kunai
 
 Because you guys are ninjas !
+
+<!--truncate-->

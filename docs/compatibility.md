@@ -14,26 +14,11 @@ If you are interested into getting more knowledge about how kunai makes to suppo
 
 In order to get your kernel version, run the following command `uname -r`, then you can check the following table.
 
-<html>
- <table>
-  <tr>
-    <th>OS</th>
-    <th>Kernels</th>
-  </tr>
-  <tr>
-    <td>Ubuntu-20.04</td>
-    <td>5.4</td>
-  </tr>
-  <tr>
-    <td>Ubuntu-22.04</td>
-    <td>5.15</td>
-  </tr>
-  <tr>
-    <td>Archlinux</td>
-    <td>5.18 to 6.18</td>
-  </tr>
-</table> 
-</html>
+| OS          | Kernels      |
+|-------------|--------------|
+| Ubuntu-20.04| 5.4          |
+| Ubuntu-22.04| 5.15         |
+| Archlinux   | 5.18 to 6.18 |
 
 :::tip My kernel is not in the table !
 
