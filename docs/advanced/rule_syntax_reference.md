@@ -21,6 +21,11 @@ type: detection | filter | dependency
 # Optional: Decision mechanism (default: include)
 decision: include | exclude
 
+# Optional: Extra rule's parameter(s)
+params:
+  # Flag to disable the rule 
+  disable: true | false
+
 # Optional: Metadata for documentation and correlation
 meta:
   tags: [tag1, tag2]              # Classification tags
