@@ -14,6 +14,8 @@ date: 2025-05-27T13:37
 
 In this blog post, we explore how `io_uring` works, its security implications, and how tools like **Kunai** can monitor `io_uring` operations.
 
+<!--truncate-->
+
 ## How it Works
 
 1. **Setting Up Shared Memory Areas**
