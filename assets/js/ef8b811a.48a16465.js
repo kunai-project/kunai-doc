@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkkunai_doc=globalThis.webpackChunkkunai_doc||[]).push([[8947],{6600(e){e.exports=JSON.parse('{"authors":[{"name":"Quentin Jerome","title":"Kunai Maintainer","url":"https://github.com/qjerome","imageURL":"https://github.com/qjerome.png","key":"quentin","page":null,"count":4}]}')}}]);
