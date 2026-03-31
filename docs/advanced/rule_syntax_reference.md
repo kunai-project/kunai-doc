@@ -23,7 +23,7 @@ decision: include | exclude
 
 # Optional: Extra rule's parameter(s)
 params:
-  # Flag to disable the rule 
+  # Flag to disable the rule (default: false)
   disable: true | false
 
 # Optional: Metadata for documentation and correlation
@@ -410,5 +410,9 @@ condition: $condition1 and ($condition2 or $condition3)
 severity: 7
 actions: [scan-files]
 ```
+
+:::tip Disabling rules
+Rules can be disabled by setting `params.disable: true` in the rule definition. This is useful for temporarily turning off rules without removing them from your configuration.
+:::
 
 This syntax reference provides everything needed to write effective Kunai rules, from basic structure to advanced patterns and optimization techniques.
