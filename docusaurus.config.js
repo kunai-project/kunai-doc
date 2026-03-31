@@ -29,6 +29,9 @@ const config = {
 
   onBrokenLinks: "throw",
 
+  // Search plugin generate broken anchor warning only in build
+  onBrokenAnchors: "ignore",
+
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -175,6 +178,17 @@ const config = {
         defaultMode: "dark",
       },
     }),
+
+  // configuration of docusaurus-search-local package: https://github.com/easyops-cn/docusaurus-search-local
+  themes: [
+    [
+      // @ts-ignore
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      // @ts-ignore
+      {},
+    ],
+  ],
 };
 
 module.exports = config;
