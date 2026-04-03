@@ -63,10 +63,16 @@ output:
   # Where the events should be written.
   path: /dev/stdout
 
-  # Optional: specify a file rotation size limit (in bytes).
+  # Optional: specify a file rotation size limit.
   rotate_size: null
   # Example: we rotate when the current log file reaches 10MB
   # rotate_size: 10MB
+  
+  # Optional: specific file rotation time interval 
+  rotate_interval: null
+  # Example: we rotate when the log file every 15 minutes
+  # rotate_interval: 15m
+  # Note: if rotate_size is also specified, the first criteria met will trigger rotation.
 
   # Optional: specify the maximum output file size (in bytes).
   max_size: null
@@ -162,4 +168,3 @@ If you are looking for advanced log filtering please look at [log filtering docu
 Log rotation **will work if and only if** `output`
 parameter **is a file**.
 :::
-
