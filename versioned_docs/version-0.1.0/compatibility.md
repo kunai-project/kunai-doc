@@ -12,8 +12,7 @@ If you are interested into getting more knowledge about how kunai makes to suppo
 
 In order to get your kernel version, run the following command `uname -r`, then you can check the following table.
 
-<html>
- <table>
+<table>
   <tr>
     <th>OS</th>
     <th>Kernels</th>
@@ -30,8 +29,7 @@ In order to get your kernel version, run the following command `uname -r`, then 
     <td>Archlinux</td>
     <td>5.18 to 6.1</td>
   </tr>
-</table> 
-</html>
+</table>
 
 :::tip My kernel is not in the table !
 
