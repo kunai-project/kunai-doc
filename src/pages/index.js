@@ -1,8 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';import Layout from '@theme/Layout';
 import CodeBlock from '@theme/CodeBlock';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
@@ -55,6 +54,27 @@ const USE_CASES = [
   ['Threat Hunting', 'Explore what really happens on your Linux hosts.'],
   ['Incident Response', 'Reconstruct process trees and attacker activity.'],
   ['Detection Engineering', 'Write and test rules against real events.'],
+];
+
+const ECOSYSTEM = [
+  {
+    title: 'Rulezet',
+    href: 'https://rulezet.org/',
+    Svg: require('@site/static/img/rulezet.svg').default,
+    text: 'Find and share community Kunai detection rules.',
+  },
+  {
+    title: 'Kunai Sandbox',
+    href: 'https://sandbox.kunai.rocks',
+    Svg: require('@site/static/img/kunai-sandbox.svg').default,
+    text: 'Run Linux samples in a VM monitored by Kunai to build detection rules.',
+  },
+  {
+    title: 'GitHub',
+    href: 'https://github.com/kunai-project',
+    Svg: require('@site/static/img/github.svg').default,
+    text: 'Source code of Kunai and its related projects.',
+  },
 ];
 
 function HomepageHeader() {
@@ -160,6 +180,25 @@ function UseCases() {
   );
 }
 
+function Ecosystem() {
+  return (
+    <section className={clsx(styles.section, styles.alt)}>
+      <div className="container">
+        <h2 className="text--center">Ecosystem</h2>
+        <div className={styles.ecosystem}>
+          {ECOSYSTEM.map(({ title, href, text, Svg }) => (
+            <Link key={title} className={styles.ecoCard} href={href}>
+              <Svg className={styles.ecoLogo} role="img" />
+              <strong>{title}</strong>
+              <span>{text}</span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -172,6 +211,7 @@ export default function Home() {
         <HomepageFeatures />
         <HowItWorks />
         <RuleShowcase />
+        <Ecosystem />
       </main>
     </Layout>
   );
